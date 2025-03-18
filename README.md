@@ -1,2 +1,2 @@
 # Personal Website
-** Using React, Tailwind, .NET, PostgreSql, and Azure for hosting
+* Using React, Tailwind, .NET, PostgreSql, and Azure for hosting
