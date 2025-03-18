@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 const NavBarComponent = () => {
     return (
         <>
-            <div id="navbar" className="bg-[#164738] w-70/100 h-8/100 left-15/100 top-1/100 fixed rounded-[8px]" >
+            <div id="navbar" className="border-[#164738] border-solid border-[3px] bg-transparent w-70/100 h-8/100 left-15/100 top-1/100 fixed rounded-[6px] z-20" >
                 <Router>
                     <nav className="w-full h-full">
                         <div className="flex flex-row h-full w-full justify-center items-center">

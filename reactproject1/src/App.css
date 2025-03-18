@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+body, html {
+    overflow-x: hidden
+}
+.dot-container {
+    @apply border-[0px];
+}
+
+
 /* Landing Page animation */
 @keyframes slideUp {
     0% {
@@ -20,15 +28,18 @@
         color: rgba(0,0,0,0);
         border-radius: 20px;
     }
-
+    85% {
+        background-color: #40826D;
+    }
     100% {
         width: 70%;
         height: 8%;
         left: 15%;
         top: 1%;
         color: rgba(0,0,0,0);
-        background-color: #164738;
-        border-radius: 8px;
+        border-radius: 6px;
+        background-color: transparent;
+        border: solid 3px #164738;
     }
 }
 
