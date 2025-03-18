@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: 
+        url('./fonts/GTWalsheimPro.ttf') format('truetype'), 
+        url('./fonts/GTWalsheimProBold.ttf') format('truetype');
+    font-weight: 
+        normal, 
+        bold;
+    font-style: normal;
+}
+
+@layer utilities {
+    .font-gt-walsheim {
+        font-family: 'GT Walsheim Pro', sans-serif;
+    }
+
+    .font-gt-walsheim-bold {
+        font-family: 'GT Walsheim Pro', sans-serif;
+        font-weight: bold;
+    }
+}
+
+@layer base {
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
