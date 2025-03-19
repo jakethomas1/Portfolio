@@ -1,26 +1,17 @@
 .dot-container {
     @apply flex;
     position: relative;
-   
+    
 }
 
-.dot {
+.dot { /* Need transition property in jsx file too ! */
     position: absolute;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: white;
     opacity: 0;
-    transition: all 0.8s ease-in-out;
-}
-
-.line {
-    position: absolute;
-    width: 1px;
-    height: 0px;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform-origin: top left;
-    transition: transform 0.1s ease;
+    transition: transform 0.8s ease-in-out;
 }
 
 .active-dot {

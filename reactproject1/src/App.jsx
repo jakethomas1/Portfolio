@@ -13,90 +13,13 @@ function App() {
     const [count, setCount] = useState(0);
     const [check, setCheck] = useState(false);
 
-    //DotGrid stuff
-    const [dots, setDots] = useState([]);
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-    const containerRef = useRef(null); // Reference to the container
-
-    // Generate dots in a grid layout within the central 80% of the container
-    const generateDots = () => {
-        if (!containerRef.current) return; // Ensure the container is available
-        const containerWidth = containerRef.current.offsetWidth;
-        const containerHeight = containerRef.current.offsetHeight;
-
-        const marginX = containerWidth * 0.1;  // 10% margin on the left and right
-        const marginY = containerHeight * 0.1;  // 10% margin on the top and bottom
-
-        const width = containerWidth * 0.8;  // 80% of container width
-        const height = containerHeight * 0.8; // 80% of container height
-
-        const cols = 12;  // Number of columns (adjust based on how many dots you want)
-        const rows = 10;  // Number of rows (adjust based on how many dots you want)
-
-        // Calculate the step size for placing dots in the grid
-        const stepX = width / (cols - 1);
-        const stepY = height / (rows - 1);
-
-        // Generate dots in a grid layout
-        const newDots = [];
-        for (let row = 0; row < rows; row++) {
-            for (let col = 0; col < cols; col++) {
-                const x = marginX + col * stepX;  // Calculate x position based on column index
-                const y = marginY + row * stepY;  // Calculate y position based on row index
-                newDots.push({ x, y });
-            }
-        }
-        setDots(newDots);
-    };
-
-    // Handle mouse move event to track cursor position
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            setCursorPosition({ x: e.pageX, y: e.pageY });
-        };
-
-        window.addEventListener('mousemove', handleMouseMove);
-
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, []);
-
-    // Regenerate dots when container size is resized
-    useEffect(() => {
-        const handleResize = () => {
-            generateDots();
-        };
-
-        // Listen for resize events on the container
-        const resizeObserver = new ResizeObserver(handleResize);
-        if (containerRef.current) {
-            resizeObserver.observe(containerRef.current);
-        }
-
-        // Generate dots on initial load
-        generateDots();
-
-        return () => {
-            if (containerRef.current) {
-                resizeObserver.unobserve(containerRef.current);
-            }
-        };
-    }, []);
-    //DotGrid ^
-
+    
     return (
         <>
             <TitleComponent />
             <LandingPageComponent />
-            <HomeViewComponent />
             <NavBarComponent />
-            <div><DotGridComponent
-                dots={dots}              
-                cursorPosition={cursorPosition} 
-                dotSize={10}
-                containerRef={containerRef}
-            /></div>
+            
             <HomeViewComponent />
 
             <h1 className="text-4xl text-blue-600 font-bold"> Hello World!</h1>

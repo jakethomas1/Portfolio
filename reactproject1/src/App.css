@@ -4,7 +4,8 @@ body, html {
     overflow-x: hidden
 }
 .dot-container {
-    @apply border-[0px];
+    @apply border-[0px] z-20 pointer-events-none;
+    background-color: transparent;
 }
 
 
@@ -26,9 +27,9 @@ body, html {
     50% {
         background-color: #40826D;
         color: rgba(0,0,0,0);
-        border-radius: 20px;
+        border-radius: 3px;
     }
-    85% {
+    75% {
         background-color: #40826D;
     }
     100% {
@@ -67,7 +68,20 @@ body, html {
 }
 
 #homeview {
-    box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.4);
+    /*box-shadow: inset 0 8px 8px rgba(0, 0, 0, 0.4) ;*/
+    position: relative;
+    top: 0;
+    z-index: 10;
+    background-color: slategrey;
+    
+}
+
+#home_content_container {
+
+}
+
+#profile_blurb {
+    @apply flex border-solid border-b-[2px] border-[#000] w-fit pr-3;
 }
 
 .nav_link {
@@ -76,6 +90,11 @@ body, html {
     position: relative;
     font-family: 'GT Walsheim Pro', sans-serif;
     animation: slideDown 2000ms;
+    /*cursor:none;*/
+}
+
+#navbar {
+    /*cursor: none;*/
 }
 
 .nav_link:hover {
