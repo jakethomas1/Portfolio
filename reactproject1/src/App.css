@@ -77,11 +77,12 @@ body, html {
 }
 
 #home_content_container {
-
+    min-width: 768px;
+    max-width: 1200px;
 }
 
-#profile_blurb {
-    @apply flex border-solid border-b-[2px] border-[#000] w-fit pr-3;
+.profile_blurb {
+    @apply flex border-solid border-b-[2px] border-[#000] w-fit pr-3 hover:border-[#fff] transition-all duration-[500ms];
 }
 
 .nav_link {
