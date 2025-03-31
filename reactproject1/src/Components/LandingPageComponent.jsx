@@ -22,8 +22,8 @@ const LandingPageComponent = () => {
                 id="landing_page"
                 className={`
                     ${hasLoaded ? 'animate-slide-up' : ''}
-                    fixed top-0 left-0 w-screen h-screen overflow-hidden text-gray-900
-                    flex items-center justify-center z-50 bg-[#40826D]`}
+                    fixed top-0 left-0 w-screen h-screen overflow-hidden text-green-100
+                    flex items-center justify-center z-50 `}
                 style={{ width: '100%', height: '100%', }}
                 onAnimationEnd={loadAnimEnd}>
                 <div className="titleBox flex flex-col items-middle">

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import App from "../App";
 import AboutComponent from "./AboutComponent";
 import ContactComponent from "./ContactComponent";
-import ProjectsComponent from "./ProjectsComponent";
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 
 const NavBarComponent = () => {
@@ -31,9 +30,10 @@ const NavBarComponent = () => {
             }
         };
     }, []);
+
     return (
         <>
-            <div id="navbar" className="border-[rgba(0,0,0,.25)] border-solid border-[1px] bg-[#164738] w-70/100 h-8/100 left-15/100 top-1/100 fixed rounded-[6px] z-20" >
+            <div id="navbar" className="border-[rgba(0,0,0,.25)] border-solid border-[1px] bg-[#fcfae6] w-70/100 h-6/100 left-15/100 top-1/100 fixed rounded-[6px] z-20" >
                 <Router>
                     <nav className="w-full h-full">
                         <div className="flex flex-row h-full w-full justify-center items-center">
@@ -47,7 +47,7 @@ const NavBarComponent = () => {
                         <Route path="/home" component={App} />
                         <Route path="/about" component={AboutComponent} />
                         <Route path="/contact" component={ContactComponent} />
-                        <Route path="/contact" component={ProjectsComponent} />
+                        <Route path="/contact"  />
                     </Routes>
                 </Router>
             </div>
