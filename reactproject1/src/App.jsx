@@ -30,13 +30,15 @@ function App() {
             <LandingPageComponent />
             <NavBarComponent />
             <HomeViewComponent />
-            <ConsoleComponent />
-            <div
-                id="ProjectsComponent_container"
-                className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-x-22 gap-y-36 mx-42 pt-32 pb-42">
-                {tilesData.map((ProjectData) => (
-                    <ProjectComponent key={ProjectData.number} number={ProjectData.number} text={ProjectData.text} />
-                ))}
+            <div id="projectsview" className="bg-[#0f0f0f]">
+                <ConsoleComponent />
+                <div
+                    id="ProjectsComponent_container"
+                    className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 u-3:grid-cols-3 gap-y-36 pt-32 pb-42 mx-auto place-items-center">
+                    {tilesData.map((ProjectData) => (
+                        <ProjectComponent key={ProjectData.number} number={ProjectData.number} text={ProjectData.text} />
+                    ))}
+                    </div>
             </div>
             <TimelineComponent />
             <h1 className="text-4xl text-blue-600 font-bold"> Hello World!</h1>

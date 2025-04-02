@@ -37,13 +37,13 @@ export const consoleText = (words, id, colors) => {
     }, 120)
     window.setInterval(function () {
         if (visible === true) {
-            con.className = 'console-underscore hidden'
+            con.className = 'console-underscore inline-block relative -top-[0.14em] left-[10px] z-[1] opacity-0'
             visible = false;
 
         } else {
-            con.className = 'console-underscore'
+            con.className = 'console-underscore inline-block relative -top-[0.14em] left-[10px] z-[1]'
 
             visible = true;
         }
-    }, 400)
+    }, 600)
 }

@@ -1,5 +1,21 @@
-@import "tailwindcss";
 @import url(https://fonts.googleapis.com/css?family=Khula:700);
+@import "tailwindcss";
+
+@theme {
+    
+    --color-bunt-500: oklch(0.22 0.11 178);
+}
+
+@layer utilities {
+    @media (min-width: 1640px) {
+        .u-3\:grid-cols-3 { /* So, adding a custom breakpoint is not as simple as adding a custom color*/
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+}
+
+/*Make media queries to step down the width of the tiles */
+/*also separate tile caption from image, image gets round border, text gets no background no border*/
 
 body, html {
     overflow-x: hidden
@@ -88,16 +104,8 @@ body, html {
     animation: waveAnimation 8s ease-in-out infinite alternate;
 }
 
-#spaceship_quote_container {
-    @apply flex justify-center px-2 rounded-[2px]; /*bg-[rgba(255,255,255,.1)]*/
-}
-#homeview {
-    /*box-shadow: inset 0 8px 8px rgba(0, 0, 0, 0.4) ;*/
-    position: relative;
-    top: 0;
-    z-index: 10;
-    background-color: #bccccc;
-}
+
+
 
 
 
@@ -139,9 +147,7 @@ body, html {
     /*cursor:none;*/
 }
 
-.home_links {
-    @apply text-[#ffffff] text-[20px] font-semibold mx-4 px-10 bg-blue-400 rounded-[4px] py-1.5;
-}
+
 
 .home_links { /* style inspired from button 7 https://getcssscan.com/css-buttons-examples */
     border: 1px solid transparent;
@@ -306,33 +312,11 @@ a {
     }
 }
 
-.hidden {
-    opacity: 0;
-}
-
-.console-container {
-    font-family: Khula, sans-serif;
-    font-weight: 700;
-    font-size: 6em;
-    text-align: center;
-    height: auto;
-    white-space: nowrap;
-    border-top: black 1px solid;
-    padding-top: 12vh;
-    display: block;
-    position: relative;
-    color: white;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
 
 .console-container::before {
     content: '';
     display: block;
-    width: 60%;
+    width: 640px;
     height: 3px;
     background-color: grey; /* Alternatively, use border-bottom */
     position: absolute;
@@ -341,10 +325,3 @@ a {
     transform: translate(-50%, -50%);
 }
 
-.console-underscore {
-    display: inline-block;
-    position: relative;
-    top: -0.14em;
-    left: 10px;
-    z-index: 1;
-}

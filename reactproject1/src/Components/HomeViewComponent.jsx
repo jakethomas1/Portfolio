@@ -44,8 +44,9 @@ const HomeViewComponent = () => {
                     flex items-center justify-center z-10
                     bg-no-repeat bg-top bg-cover w-full
                     shadow-[inset_0_0px_6px_rgba(0,0,0,0.1)]
-                    flex flex-row border-b-[1px] border-white`}
+                    flex flex-row border-b-[1px] border-white bg-[#bccccc]`}
             >
+
                 <div className="w-3/5 h-full relative flex justify-center border-r-[1px] border-white">
                     <video
                         ref={videoRef}
@@ -55,12 +56,12 @@ const HomeViewComponent = () => {
                     >
                         <source src="/assets/spaceship.mp4" type="video/mp4"/>
                     </video>
-                    <div id="spaceship_quote_container" className="absolute z-40 bottom-50/100 w-auto">
+                    <div id="spaceship_quote_container" className="absolute z-40 bottom-50/100 w-auto flex justify-center px-2 rounded-[2px]">
                         <div id="spaceship_quote" className="relative text-[#ffffff] text-[48px] font-bold"></div>
                     </div>
                     <div id="home_link_container" className="absolute z-40 bottom-25/100 w-100/100 flex justify-center">
-                        <a className="home_links">Github</a>
-                        <a className="home_links">LinkedIn</a>
+                        <a className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-10 bg-blue-600 rounded-[4px] py-1.5">Github</a>
+                        <a className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-10 bg-blue-600 rounded-[4px] py-1.5">LinkedIn</a>
                     </div>
                 </div>
                 <div className="w-2/5 h-full bg-[#424549] vignette border-l-[1px] border-black"></div>
