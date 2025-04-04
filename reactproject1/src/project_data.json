@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "name": "Transcribo",
+      "script": "totext.py",
+      "language": "Python 3",
+      "description": "A Python script using Google Speech Recognition API for transcription.",
+      "image": "transcribo-pic.png"
+    },
+    {
+      "name": "ConvertToGif",
+      "script": "gifCreate.sh",
+      "language": "Bash",
+      "description": "A Bash script using ffmpeg and giflossy to mass convert all .mp4 files in a given folder to optimized .gif files.",
+      "image": "gifcreate-pic.png"
+    },
+    {
+      "name": "Autoclicka",
+      "script": "autoclicker.py",
+      "language": "Python 3",
+      "description": "A Python script using tkinter and pynput to create a minimalist customizable rapid automatic clicking application (i.e. autoclicker).",
+      "image": "autoclicker-pic.png",
+      "video": "autoclicker-video.mp4"
+    },
+    {
+      "name": "Autoclicka",
+      "script": "autoclicker.py",
+      "language": "Python 3",
+      "description": "A Python script using tkinter and pynput to create a minimalist customizable rapid automatic clicking application (i.e. autoclicker).",
+      "image": "autoclicker-pic.png",
+      "video": "autoclicker-video.mp4"
+    }
+  ]
+}

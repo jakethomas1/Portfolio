@@ -6,14 +6,6 @@
     --color-bunt-500: oklch(0.22 0.11 178);
 }
 
-@layer utilities {
-    @media (min-width: 1640px) {
-        .u-3\:grid-cols-3 { /* So, adding a custom breakpoint is not as simple as adding a custom color*/
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-    }
-}
-
 /*Make media queries to step down the width of the tiles */
 /*also separate tile caption from image, image gets round border, text gets no background no border*/
 
@@ -25,6 +17,15 @@ body, html {
     background-color: transparent;
 }
 
+@keyframes bgZoom {
+    0% {
+        background-size: 100%;
+    }
+
+    100% {
+        background-size: 120%;
+    }
+}
 
 /* Landing Page animation */
 @keyframes slideUp {

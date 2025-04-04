@@ -10,7 +10,7 @@ const ConsoleComponent = () => {
     return (
         <div className='console-container 
                         font-[Khula] font-bold text-[6em] text-center h-auto whitespace-nowrap
-                        border-t border-black pt-[12vh] block relative text-white top-0
+                        pt-[12vh] block relative text-white top-0
                         bottom-0 left-0 right-0 z-[1]'>
             <span id='console_text'></span>
             <div className='console-underscore' id='console'>&#95;</div> 

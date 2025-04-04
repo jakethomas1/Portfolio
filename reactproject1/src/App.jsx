@@ -8,21 +8,10 @@ import HomeViewComponent from "./Components/HomeViewComponent";
 import ProjectComponent from './Components/ProjectComponent';
 import ConsoleComponent from './Components/ConsoleComponent';
 import TimelineComponent from './Components/TimelineComponent'
-
+import ProjectData from './project_data.json'
 function App() {
     const [count, setCount] = useState(0);
-    const [check, setCheck] = useState(false);
-
-    
-
-    const getRandomInt = (min, max) => {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-
-    const tilesData = Array.from({ length: 5 }, (_, index) => ({
-        number: index + 1,
-        text: `This is tile number ${index + 1}. Random number: ${getRandomInt(1, 100)}`,
-    }));
+    const [check, setCheck] = useState(false);   
 
     return (
         <>
@@ -31,14 +20,17 @@ function App() {
             <NavBarComponent />
             <HomeViewComponent />
             <div id="projectsview" className="bg-[#0f0f0f]">
+                <div id="projectsview_container" className="mt-[80px]">
                 <ConsoleComponent />
                 <div
                     id="ProjectsComponent_container"
-                    className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 u-3:grid-cols-3 gap-y-36 pt-32 pb-42 mx-auto place-items-center">
-                    {tilesData.map((ProjectData) => (
-                        <ProjectComponent key={ProjectData.number} number={ProjectData.number} text={ProjectData.text} />
+                        className="grid grid-cols-[repeat(auto-fit,minmax(500px,1fr))] gap-x-[32px] gap-y-24 pt-32 pb-42 mx-auto w-full 
+                                    max-w-[500px] [@media(min-width:1049px)]:max-w-[1032px] [@media(min-width:1581px)]:max-w-[1564px] place-items-center">
+                    {ProjectData.projects.map((project, index) => (
+                        <ProjectComponent key={index} {...project} />
                     ))}
                     </div>
+                </div>
             </div>
             <TimelineComponent />
             <h1 className="text-4xl text-blue-600 font-bold"> Hello World!</h1>
@@ -60,6 +52,7 @@ function App() {
                     Edit <code>src/App.jsx</code> and save to test HMR
                 </div>
             </div>
+            
         </>
     );
 }
