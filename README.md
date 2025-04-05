@@ -1,2 +1,4 @@
 # Personal Website
-* Using React, Tailwind, .NET, PostgreSql, and Azure for hosting
+* Currently using React, Tailwind, and Cloudflare pages for hosting
+
+Looking to incorporate .NET server and SQL db at some point.
