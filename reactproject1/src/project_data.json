@@ -3,7 +3,7 @@
     {
       "name": "Transcribo",
       "script": "totext.py",
-      "languages": [ "Python" ],
+      "languages": [ "Python3" ],
       "description": "A Python script using Google Speech Recognition API for transcription.",
       "image": "transcribo-pic.png"
     },
@@ -17,7 +17,7 @@
     {
       "name": "Autoclicka",
       "script": "autoclicker.py",
-      "languages": [ "Python" ],
+      "languages": [ "Python3" ],
       "description": "A Python script using tkinter and pynput to create a minimalist customizable rapid automatic clicking application (i.e. autoclicker).",
       "image": "autoclicker-pic.png",
       "video": "autoclicker-video.mp4"
@@ -25,7 +25,7 @@
     {
       "name": "Autoclicka",
       "script": "autoclicker.py",
-      "languages": [ "Python" ],
+      "languages": [ "Python3" ],
       "description": "A Python script using tkinter and pynput to create a minimalist customizable rapid automatic clicking application (i.e. autoclicker).",
       "image": "autoclicker-pic.png",
       "video": "autoclicker-video.mp4"
