@@ -8,6 +8,10 @@ const NavBarComponent = () => {
     
     const [isInView, setIsInView] = useState(false);
     const ref = useRef(null);
+    const jumpTo = (element_id) => {
+        const projectsview = document.getElementById(element_id);
+        projectsview.scrollIntoView({ behavior: 'auto', block: 'start' });
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -37,10 +41,10 @@ const NavBarComponent = () => {
                 <Router>
                     <nav className="w-full h-full">
                         <div className="flex flex-row h-full w-full justify-center items-center">
-                            <span className="m-0"><Link to="/home" className={`nav_link ${isInView ? 'opacity-0 translate-y-100' : 'opacity-100 translate-y-0'}`}>Home</Link></span>
-                            <span className="m-0"><Link to="/projects" className="nav_link">Projects</Link></span>
-                            <span className="m-0"><Link to="/about" className="nav_link">About</Link></span>
-                            <span className="m-0"><Link to="/contact" className="nav_link">Contact</Link></span>
+                            <span className="m-0"><Link to="/home" onClick={() => jumpTo('homeview')} className={`nav_link ${isInView ? 'opacity-0 translate-y-100' : 'opacity-100 translate-y-0'}`}>Home</Link></span>
+                            <span className="m-0"><Link to="/projects" onClick={() => jumpTo('projectsview')} className="nav_link">Projects</Link></span>
+                            <span className="m-0"><Link to="/about" onClick={() => jumpTo('timelineview')} className="nav_link">About</Link></span>
+                            <span className="m-0"><Link to="/contact" onClick={() => jumpTo('timelineview')} className="nav_link">Contact</Link></span>
                         </div>
                     </nav>
                     <Routes>

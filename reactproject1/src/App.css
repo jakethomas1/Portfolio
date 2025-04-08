@@ -194,7 +194,7 @@ body, html {
 }
 
 .vignette {
-    box-shadow: 0 0 32px 2px rgba(255,255,255,.1) inset;
+    box-shadow: 0 0 32px -8px rgba(255,255,255,.1) inset;
 }
 
 .lightmodevignette {
@@ -313,7 +313,7 @@ a {
     display: block;
     width: 640px;
     height: 3px;
-    background-color: grey; /* Alternatively, use border-bottom */
+    background-color: lightgrey; /* Alternatively, use border-bottom */
     position: absolute;
     bottom: 0; /* Adjust as needed */
     left: 50%;

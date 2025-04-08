@@ -19,8 +19,8 @@ function App() {
             <LandingPageComponent />
             <NavBarComponent />
             <HomeViewComponent />
-            <div id="projectsview" className="bg-[#0f0f0f]">
-                <div id="projectsview_container" className="mt-[80px]">
+            <div id="projectsview" className="bg-[#0f0f0f] py-[80px]">
+                <div id="projectsview_container" className="">
                 <ConsoleComponent />
                 <div
                     id="ProjectsComponent_container"
@@ -32,7 +32,9 @@ function App() {
                     </div>
                 </div>
             </div>
-            <TimelineComponent />
+            <div id="timelineview">
+                <TimelineComponent />
+            </div>
             <h1 className="text-4xl text-blue-600 font-bold"> Hello World!</h1>
 
             <div className="card">
