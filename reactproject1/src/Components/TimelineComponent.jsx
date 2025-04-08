@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import {  useRef } from 'react';
 
 const TimelineComponent = () => {
-    const [bgColor, setBgColor] = useState('rgb(140,140,140)');
     const timelineRef = useRef(null);
+/*    const [bgColor, setBgColor] = useState('rgb(140,140,140)');
+    
     const isVisible = useRef(false);
 
     useEffect(() => {
@@ -44,13 +45,15 @@ const TimelineComponent = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
+    */
 
     return (
         <>
-            <div ref={timelineRef} className="min-h-[125vh] w-full lightmodevignette"
-                style={{ backgroundColor: bgColor, transition: 'background-color .2s ease-in-out' }}>
-
+            <div ref={timelineRef} className="min-h-[125vh] w-full bg-[#6b667d]"
+                >
+                <div className="w-full h-full">
+                    
+                </div>
             </div>
         </>
     )

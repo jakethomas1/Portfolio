@@ -19,8 +19,8 @@ function App() {
             <LandingPageComponent />
             <NavBarComponent />
             <HomeViewComponent />
-            <div id="projectsview" className="bg-[#0f0f0f] py-[80px]">
-                <div id="projectsview_container" className="">
+            <div id="projectsview" className="bg-[#0f0f0f] shadow-[0_2px_18px_rgba(0,0,0,.3)] relative z-10">
+                <div id="projectsview_container" className="py-[80px]">
                 <ConsoleComponent />
                 <div
                     id="ProjectsComponent_container"
@@ -32,29 +32,10 @@ function App() {
                     </div>
                 </div>
             </div>
-            <div id="timelineview">
+            <div id="timelineview relative z-5">
                 <TimelineComponent />
             </div>
-            <h1 className="text-4xl text-blue-600 font-bold"> Hello World!</h1>
-
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <div>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={check}
-                            onChange={() => setCheck((prevcheck) => !prevcheck)}
-                        />
-                        Checkbox!
-                    </label>
-                    <h4> Checkbox says: {check ? "True" : "False"} </h4>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </div>
-            </div>
-            
+            <div id="footer" className="bg-[#c1c1c1] w-full h-[320px] shadow-[0_-2px_18px_rgba(0,0,0,.3)] relative z-10"></div>
         </>
     );
 }
