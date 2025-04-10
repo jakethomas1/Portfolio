@@ -2,8 +2,9 @@
 @import "tailwindcss";
 
 @theme {
-    
     --color-bunt-500: oklch(0.22 0.11 178);
+    --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+    --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
 }
 
 /*Make media queries to step down the width of the tiles */
@@ -184,11 +185,6 @@ body, html {
   box-shadow: none;
 }
 
-#navbar {
-    /*cursor: none;*/
-    min-width: 480px;
-}
-
 .nav_link:hover {
     transform: translateY(-6%);
 }
@@ -301,18 +297,5 @@ a {
         background-color: rgb(150,150,150);
     }
 
-}
-
-
-.console-container::before {
-    content: '';
-    display: block;
-    width: 640px;
-    height: 3px;
-    background-color: lightgrey; /* Alternatively, use border-bottom */
-    position: absolute;
-    bottom: 0; /* Adjust as needed */
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 

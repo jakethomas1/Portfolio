@@ -40,17 +40,17 @@ const HomeViewComponent = () => {
                 ref={home_div}
                 id="homeview"
                 className={`
-                    relative top-0 left-0 h-[95vh] overflow-hidden text-gray-900
+                    relative top-0 left-0 overflow-hidden text-gray-900
                     flex items-center justify-center z-10
                     bg-no-repeat bg-top bg-cover w-full
                     shadow-[inset_0_0px_6px_rgba(0,0,0,0.1)]
-                    flex flex-row border-b-[1px] border-white bg-[#bccccc]`}
+                    flex flex-col md:flex-row border-b-[1px] border-[#FAF9F6] bg-[#bccccc]`}
             >
 
-                <div className="w-1/2 h-full relative flex justify-center border-r-[1px] border-white bg-[#000]">
+                <div className="w-full md:w-1/2 h-[95vh] relative flex justify-center border-b-[1px] md:border-r-[1px] border-[#FAF9F6] bg-[#000]">
                     <video
                         ref={videoRef}
-                        className="absolute top-0 left-0 w-full h-full object-cover border-r-[1px] solid border-[rgba(0,0,0,.5)] opacity-50"
+                        className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
                         loop muted playsInline
                         onLoadedMetadata={(e) => e.target.playbackRate = .5}
                     >
@@ -64,17 +64,20 @@ const HomeViewComponent = () => {
                         <a className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-12 bg-blue-600 rounded-[4px] py-2">LinkedIn</a>
                     </div>
                 </div>
-                <div className="relative w-1/2 h-full bg-[#181818] vignette border-l-[1px] border-black">
-                    <div id="homepage_text_container" className="text-white text-[18px] absolute top-[45%] left-[50%] translate-[-50%] flex flex-col items-center">
+                <div className="relative w-full md:w-1/2 h-[95vh] bg-[#181818] vignette border-t-[1px] md:border-l-[1px] border-black flex flex-col items-center justify-center">
+                    <div id="homepage_text_container" className="text-white text-[18px] relative flex flex-col items-center w-1/2 mb-[90px]">
                         {bio1}
                         <div className="h-[40px] w-full"></div>
-                        <div className="h-[2px] w-80/100 bg-[#fff]"></div>
+                        <div id="glorified_br" className="relative flex items-center h-[2px] w-80/100 bg-[#fff] m-[6px]">
+                            <div className="absolute left-0 -translate-x-[4px] h-full w-[8px] bg-[#fff] [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]"></div>
+                            <div className="absolute right-0 translate-x-[4px] h-full w-[8px] bg-[#fff] [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)] "></div>
+                        </div>
                         <div className="h-[40px] w-full"></div>
                         {bio2}
                         
                         
                     </div>
-                    <div id="homepage_link_container" className="text-white absolute top-[70%] left-[50%] translate-[-50%] flex flex-row items-center">
+                    <div id="homepage_link_container" className="text-white relative flex flex-row items-center">
                         <a href="/assets/JacobThomas_Resume.pdf" target="_blank" className="block no-underline text-inherit">
                             <div className="h-[50px] w-[170px] whitespace-nowrap 
                                             rounded-[24px] border-[2px] border-[#494946] mx-[6px] bg-[#262625]

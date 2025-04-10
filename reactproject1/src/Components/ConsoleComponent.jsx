@@ -9,9 +9,10 @@ const ConsoleComponent = () => {
 
     return (
         <div className='console-container 
-                        font-[Khula] font-bold text-[6em] text-center h-auto whitespace-nowrap
+                        font-[Khula] font-bold text-[3em] md:text-[6em] text-center h-auto whitespace-nowrap
                         pt-[12vh] block relative text-white top-0
                         bottom-0 left-0 right-0 z-[1]'>
+            <div id="console_underline" className="absolute bottom-0 w-[320px] md:w-[640px] h-[3px] bg-[rgb(200,200,200)] left-1/2 -translate-x-1/2 z-10"></div>
             <span id='console_text'></span>
             <div className='console-underscore' id='console'>&#95;</div> 
         </div>
@@ -19,3 +20,4 @@ const ConsoleComponent = () => {
 };
 
 export default ConsoleComponent;
+ 
