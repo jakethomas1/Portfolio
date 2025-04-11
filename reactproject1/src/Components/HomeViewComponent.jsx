@@ -3,6 +3,8 @@ import { useRef, useEffect } from 'react';
 
 const HomeViewComponent = () => {
     const home_div = useRef(null);
+    const spaceship_quote1 = `Jacob Thomas`
+    const spaceship_quote2 = `Software Engineer`
     const bio1 = `What started off as competitive interest in Math, led to a fire for Math, Physics, and Computers.`;
     const bio2 = `Now, I have just recently graduated from CSU San Marcos with a B.S. Computer 
         Science.`;
@@ -56,16 +58,16 @@ const HomeViewComponent = () => {
                     >
                         <source src="/assets/spaceship.mp4" type="video/mp4"/>
                     </video>
-                    <div id="spaceship_quote_container" className="absolute z-40 bottom-50/100 w-auto flex justify-center px-2 rounded-[2px]">
-                        <div id="spaceship_quote" className="relative text-[#ffffff] text-[48px] font-bold"></div>
+                    <div id="spaceship_quote_container" className="absolute z-40 bottom-50/100 w-full flex justify-center rounded-[2px]">
+                        <div id="spaceship_quote" className="relative text-[#ffffff] text-[36px] md:text-[44px] font-bold whitespace-nowrap overflow-hidden">{spaceship_quote1}<br></br>{spaceship_quote2}</div>
                     </div>
                     <div id="home_link_container" className="absolute z-40 bottom-25/100 w-100/100 flex justify-center">
-                        <a className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-12 bg-blue-600 rounded-[4px] py-2">Github</a>
-                        <a className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-12 bg-blue-600 rounded-[4px] py-2">LinkedIn</a>
+                        <a className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-8 md:px-12 bg-blue-600 rounded-[4px] py-3 md:py-2">Github</a>
+                        <a className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-8 md:px-12 bg-blue-600 rounded-[4px] py-3 md:py-2">LinkedIn</a>
                     </div>
                 </div>
                 <div className="relative w-full md:w-1/2 h-[95vh] bg-[#181818] vignette border-t-[1px] md:border-l-[1px] border-black flex flex-col items-center justify-center">
-                    <div id="homepage_text_container" className="text-white text-[18px] relative flex flex-col items-center w-1/2 mb-[90px]">
+                    <div id="homepage_text_container" className="text-white text-[18px] relative flex flex-col items-center w-1/2 mb-[90px] overflow-hidden">
                         {bio1}
                         <div className="h-[40px] w-full"></div>
                         <div id="glorified_br" className="relative flex items-center h-[2px] w-80/100 bg-[#fff] m-[6px]">

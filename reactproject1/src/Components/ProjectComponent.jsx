@@ -5,7 +5,7 @@ const ProjectComponent = ({ name, script, languages, description, image, video }
     return (
         <div id="ProjectComponent_root" className="relative flex items-center justify-center flex-col w-[300px] h-[440px] md:h-[480px] md:w-[500px] 
                                                    group cursor-pointer">
-            <div className="relative w-100/100 h-8/12 top-0 border-t-[2px] border-[rgba(150,150,150,1)] rounded-[12px] 
+            <div className="relative w-100/100 h-8/12 top-0 border-t-[2px] border-[rgba(150,150,150,1)] rounded-[8px] 
                             shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px] group-hover:rounded-none 
                             "
                     style={{ backgroundImage: `url(/assets/${image})` }}></div>
