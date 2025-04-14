@@ -1,0 +1,102 @@
+{
+  "milestones": [
+    {
+      "year": "2015",
+      "title": "AP CS Final Project",
+      "description": "Simple catch falling objects game in Java.",
+      "technologies": [ "Java" ]
+    },
+    {
+      "year": "2017",
+      "title": "Halite2",
+      "description": "Participated in Halite2 programming competition.",
+      "technologies": [ "Python" ]
+    },
+    {
+      "year": "2017",
+      "title": "Graduated High School",
+      "description": "Completed high school education."
+    },
+    {
+      "year": "2018",
+      "title": "Halite3",
+      "description": "Used A*/Dijkstra algorithms in Halite3 competition.",
+      "technologies": [ "Python" ]
+    },
+    {
+      "year": "2018",
+      "title": "Switched to Ubuntu",
+      "description": "Switched to Ubuntu 16.04 for programming with VIM on Thinkpad; began self-hosting with Raspberry Pi."
+    },
+    {
+      "year": "2019",
+      "title": "Core CS Coursework",
+      "description": "Completed all core university CS classes (100–300 level)."
+    },
+    {
+      "year": "2019",
+      "title": "First Website",
+      "description": "Created first website using NodeJS, ExpressJS, vanilla JS, HTML, and CSS. First devops experience, hosted on Digital Ocean using Docker.",
+      "technologies": [ "NodeJS", "ExpressJS", "JavaScript", "HTML", "CSS", "Docker", "Digital Ocean" ]
+    },
+    {
+      "year": "2019",
+      "title": "Software Test Engineer at Zapways",
+      "description": "Worked at Zapways in Irvine, CA. Refactored system to VueJS. Stack included .NET, Blazor, VueJS, SASS. Used Postman, Selenium, Redmine.",
+      "technologies": [ ".NET", "Blazor", "VueJS", "SASS", "Postman", "Selenium", "Redmine" ]
+    },
+    {
+      "year": "2021",
+      "title": "Automation at Zapways",
+      "description": "Owned development of automated testing systems for website, OTA, and GDS platforms."
+    },
+    {
+      "year": "2022",
+      "title": "Returned to School",
+      "description": "Left Zapways and resumed academic studies."
+    },
+    {
+      "year": "2023",
+      "title": "Completed General Education",
+      "description": "Finished all previously skipped 100–200 level general education classes at Community College."
+    },
+    {
+      "year": "2023",
+      "title": "Returned to University",
+      "description": "Re-enrolled to complete Computer Science degree. Tried Linux Mint, then switched back to Windows."
+    },
+    {
+      "year": "2024",
+      "title": "AI Model Research",
+      "description": "Studied AI models: LR, DT, RF, SVM, KN, NN. Used Google Colab, Gemini, and scikit-learn.",
+      "technologies": [ "Logistic Regression", "Decision Tree", "Random Forest", "SVM", "K-Nearest Neighbors", "Neural Networks", "Google Colab", "Gemini", "scikit-learn" ]
+    },
+    {
+      "year": "2024",
+      "title": "DevOps & Cloud Tools",
+      "description": "Worked with Terraform, Ansible, ANTLR, Conda to strengthen cloud infrastructure and devops skills.",
+      "technologies": [ "Terraform", "Ansible", "ANTLR", "Conda" ]
+    },
+    {
+      "year": "2024",
+      "title": "Networking Fundamentals",
+      "description": "Learned about Subnetting, DNS, Routing, Switches, and OSI Model (7 Layers)."
+    },
+    {
+      "year": "2024",
+      "title": "Capstone Project",
+      "description": "Led development of tournament system for USU Web App."
+    },
+    {
+      "year": "2024",
+      "title": "Bachelor's Degree",
+      "description": "Completed Bachelor of Computer Science at California State University San Marcos."
+    },
+    {
+      "year": "2025",
+      "title": "Personal Website",
+      "description": "Created this website using ReactJS, TailwindCSS, and hosted via Cloudflare.",
+      "technologies": [ "ReactJS", "TailwindCSS", "Cloudflare" ]
+    }
+  ]
+}

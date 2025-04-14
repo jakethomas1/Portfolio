@@ -7,10 +7,11 @@ export const useIntObs = (threshold = 0.5, once = true) => {
     useEffect(() => {
         const currentElement = ref.current;
         if (!currentElement) return;
-
+        
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
                 setInView(true);
+                console.log("Hello World!");
                 if (once) {
                     observer.unobserve(entry.target);
                 }
