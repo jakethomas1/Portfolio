@@ -25,7 +25,7 @@ const NavBarComponent = () => {
                         <div className="flex flex-col md:flex-row h-full w-full md:justify-center md:items-center text-left md:text-middle">
                             <Link to="/home" onClick={() => jumpTo('homeview')} className={`nav_link`}>Home</Link>
                             <Link to="/projects" onClick={() => jumpTo('projectsview')} className="nav_link">Projects</Link>
-                            <Link to="/about" onClick={() => jumpTo('timelineview')} className="nav_link">About</Link>
+                            <Link to="/about" onClick={() => jumpTo('timelineview_container')} className="nav_link">About</Link>
                             <Link to="/contact" onClick={() => jumpTo('footer')} className="nav_link">Contact</Link>
                         </div>
                     </nav>

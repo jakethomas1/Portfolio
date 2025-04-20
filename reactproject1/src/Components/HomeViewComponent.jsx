@@ -49,21 +49,23 @@ const HomeViewComponent = () => {
                     flex flex-col md:flex-row border-b-[1px] border-[#FAF9F6] bg-[#bccccc]`}
             >
 
-                <div className="w-full md:w-1/2 h-[95vh] relative flex justify-center border-b-[1px] md:border-r-[1px] border-[#FAF9F6] bg-[#000]">
+                <div className="w-full md:w-1/2 h-[95vh] relative flex justify-center border-b-[1px] md:border-r-[1px] border-[#FAF9F6]">
                     <video
                         ref={videoRef}
-                        className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+                        className="absolute top-0 left-0 w-full h-full object-cover opacity-100"
                         loop muted playsInline
                         onLoadedMetadata={(e) => e.target.playbackRate = .5}
                     >
-                        <source src="/assets/spaceship.mp4" type="video/mp4"/>
+                        <source src="/assets/spaceship.mp4" type="video/mp4" />
                     </video>
-                    <div id="spaceship_quote_container" className="absolute z-40 bottom-50/100 w-full flex justify-center rounded-[2px]">
-                        <div id="spaceship_quote" className="relative text-[#ffffff] text-[36px] md:text-[44px] font-bold whitespace-nowrap overflow-hidden">{spaceship_quote1}<br></br>{spaceship_quote2}</div>
+                    <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,.5)] z-11"></div>
+                    <div id="spaceship_quote_container" className="absolute z-40 bottom-50/100 w-full flex justify-center rounded-[2px] bg-[rgba(0,0,0,.5)]">
+                        <div id="spaceship_quote" className="relative text-[#ffffff] text-[36px] md:text-[44px] font-bold whitespace-nowrap overflow-hidden">{spaceship_quote1}<br></br>
+                            <div className="text-[28px] font-bold">{spaceship_quote2}</div></div>
                     </div>
                     <div id="home_link_container" className="absolute z-40 bottom-25/100 w-100/100 flex justify-center">
-                        <a className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-8 md:px-12 bg-blue-600 rounded-[4px] py-3 md:py-2">Github</a>
-                        <a className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-8 md:px-12 bg-blue-600 rounded-[4px] py-3 md:py-2">LinkedIn</a>
+                        <a href="https://github.com/jakethomas1" target="_blank" rel="noopener noreferrer" className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-8 md:px-12 bg-blue-600 rounded-[4px] py-3 md:py-2">Github</a>
+                        <a href="https://linkedin.com/in/jakethomas1" target="_blank" rel="noopener noreferrer" className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-8 md:px-12 bg-blue-600 rounded-[4px] py-3 md:py-2">LinkedIn</a>
                     </div>
                 </div>
                 <div className="relative w-full md:w-1/2 h-[95vh] bg-[#181818] vignette border-t-[1px] md:border-l-[1px] border-black flex flex-col items-center justify-center">

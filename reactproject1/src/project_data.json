@@ -1,6 +1,12 @@
 {
   "projects": [
     {
+      "name": "ACMHackathon2025",
+      "languages": [ "Python3" ],
+      "description": "Achieved 2nd place in ACM at CSUSM's first hackathon as a solo developer.",
+      "image": "acmhackathon2025_results.png"
+    },
+    {
       "name": "Transcribo",
       "script": "totext.py",
       "languages": [ "Python3" ],
@@ -13,14 +19,6 @@
       "languages": [ "Bash" ],
       "description": "A Bash script using ffmpeg and giflossy to mass convert all .mp4 files in a given folder to optimized .gif files.",
       "image": "gifcreate-pic.png"
-    },
-    {
-      "name": "Autoclicka",
-      "script": "autoclicker.py",
-      "languages": [ "Python3" ],
-      "description": "A Python script using tkinter and pynput to create a minimalist customizable rapid automatic clicking application (i.e. autoclicker).",
-      "image": "autoclicker-pic.png",
-      "video": "autoclicker-video.mp4"
     },
     {
       "name": "Autoclicka",

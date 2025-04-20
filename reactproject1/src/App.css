@@ -170,7 +170,7 @@ body, html {
 
 .home_links { /* style inspired from button 7 https://getcssscan.com/css-buttons-examples */
     border: 1px solid transparent;
-    border-radius: 3px;
+    
     box-shadow: rgba(190, 190, 190, .7) 0 1px 0 0 inset;
     color: #fff;
     cursor: pointer;
