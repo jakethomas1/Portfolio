@@ -13,12 +13,10 @@ import { useIntObs } from './utils/useIntObs';
 import { useState } from "react";
 import TimelineBtnComponent from "./Components/TimelineBtnComponent";
 
-
-
 function App() {
     const [timelineRef, inView] = useIntObs(0.5, false);
     const [offset, setOffset] = useState(50);
-    const [timeline_step, timeline_min_offset] = [300, 0];
+    const [timeline_step, timeline_min_offset] = [300, 50];
     const timeline_max_offset = (TimelineData.milestones.length - 2) * -timeline_step + 50;
     const [quote, author] = ["\"Elegance is not a dispensable luxury, but a crucial matter that decides between success and failure.\"", "Edsger W. Dijkstra"];
     const getBackgroundColor = (width) => {
