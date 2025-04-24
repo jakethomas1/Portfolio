@@ -5,9 +5,12 @@ import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import ProjectComponent from './ProjectComponent';
 import { useState } from "react";
 import { useClickAway } from '../utils/useClickAway';
+import { useIntObs } from '../utils/useIntObs'
 
 const NavBarComponent = () => {
     const [vis, setVis] = useState(false);
+    
+    const [scollSentinel, endVis] = useIntObs(1, false);
 
     const jumpTo = (element_id) => {
         const projectsview = document.getElementById(element_id);
@@ -33,11 +36,15 @@ const NavBarComponent = () => {
             <div
                 ref={navref}
                 id="navbar"
-                className={`md:border-[rgba(0,0,0,.25)] md:border-solid md:border-[1px] md:bg-[#fcfae6] md:min-w-[480px] 
-                                        md:w-40/100 md:h-6/100 md:top-1/100 md:fixed md:rounded-[6px] md:z-20 md:left-1/2 md:-translate-x-1/2
-                                        fixed w-auto max-w-7/10 h-full bg-[rgba(200,200,200,1)] z-20 left-0 md:block ${vis ? 'block' : 'hidden'}`} >
+                className={`md:grid md:grid-cols-[1fr_auto_1fr] md:items-center top-0 md:border-[rgba(0,0,0,.25)] md:border-solid md:border-[1px] md:bg-[#fcfae6] md:min-w-[480px] 
+                            md:w-full  md:fixed md:z-20 md:left-1/2 md:-translate-x-1/2
+                            fixed h-full bg-[rgba(200,200,200,1)] z-20 left-0 transition-[height] duration-200 ease-in-out
+                            ${vis ? 'grid' : 'hidden'} ${endVis ? 'md:h-10/100' : 'md:h-6/100'}`} >
+
+                <div id="name1" className="font-bask justify-center z-21 text-black text-[24px] h-full content-center pl-[12vw] whitespace-nowrap">Jacob Thomas</div>
+
                 <Router>
-                    <nav className="w-full h-full">
+                    <nav className="justify-center w-full h-full">
                         <div className="nav_link_container flex flex-col md:flex-row h-full w-full md:justify-center md:items-center text-left md:text-middle">
                             <Link to="/home" onClick={() => { jumpTo('homeview'); setVis(false); }} className={`nav_link`}>Home</Link>
                             <Link to="/projects" onClick={() => { jumpTo('projectsview'); setVis(false); }} className="nav_link">Projects</Link>
@@ -58,12 +65,16 @@ const NavBarComponent = () => {
                         <Route path="/about" component={ProjectComponent} />
                         <Route path="/about" component={AboutComponent} />
                         <Route path="/contact" component={ContactComponent} />
-                        <Route path="/contact"  />
                     </Routes>
                 </Router>
+
+                <div className="justify-self-end w-0"></div>
             </div>
+            <div ref={scollSentinel} id="scroll-position-sent" className="absolute top-[150px]"></div>
         </>
     );
 };
 
 export default NavBarComponent;
+
+/*Dont actually need react router here, most use comes out of switching off single page application - SPA, but I will keep for future use*/

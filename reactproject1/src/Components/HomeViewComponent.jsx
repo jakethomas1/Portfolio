@@ -8,7 +8,7 @@ const HomeViewComponent = () => {
     const bio1 = `What started off as competitive interest in Math, led to a fire for Math, Physics, and Computers.`;
     const bio2 = `Now, I have just recently graduated from CSU San Marcos with a B.S. Computer 
         Science.`;
-        //bio3 should be link to resume
+    //bio3 should be link to resume
     const videoRef = useRef(null);
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -23,14 +23,14 @@ const HomeViewComponent = () => {
             },
             { threshold: 0.5 } // Adjust threshold as needed
         );
-
-        if (videoRef.current) {
-            observer.observe(videoRef.current);
+        const curVideoRef = videoRef.current /*needed because ref changes before cleanup if not set*/
+        if (curVideoRef) {
+            observer.observe(curVideoRef);
         }
 
         return () => {
-            if (videoRef.current) {
-                observer.unobserve(videoRef.current);
+            if (curVideoRef) {
+                observer.unobserve(curVideoRef);
             }
         };
     }, []);
@@ -49,7 +49,7 @@ const HomeViewComponent = () => {
                     flex flex-col md:flex-row border-b-[1px] border-[#FAF9F6] bg-[#bccccc]`}
             >
 
-                <div className="w-full md:w-1/2 h-[95vh] relative flex justify-center border-b-[1px] md:border-r-[1px] border-[#FAF9F6]">
+                <div className="w-full md:w-1/2 h-[95vh] relative flex justify-center border-b-[1px] md:border-b-[0px] md:border-r-[1px] border-[#FAF9F6]">
                     <video
                         ref={videoRef}
                         className="absolute top-0 left-0 w-full h-full object-cover opacity-100"
@@ -78,8 +78,8 @@ const HomeViewComponent = () => {
                         </div>
                         <div className="h-[40px] w-full"></div>
                         {bio2}
-                        
-                        
+
+
                     </div>
                     <div id="homepage_link_container" className="text-white relative flex flex-row items-center">
                         <a href="/assets/JacobThomas_Resume.pdf" target="_blank" className="block no-underline text-inherit">
@@ -99,9 +99,9 @@ const HomeViewComponent = () => {
                             </div>
                         </a>
                     </div>
-                    
-                   
-                    
+
+
+
                 </div>
 
             </div>

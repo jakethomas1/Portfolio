@@ -12,19 +12,14 @@ import TimelineData from './timeline_data.json'
 import { useIntObs } from './utils/useIntObs';
 import { useState } from "react";
 import TimelineBtnComponent from "./Components/TimelineBtnComponent";
-
+import TimelineScrollComponent from "./Components/TimelineScrollComponent"
 function App() {
     const [timelineRef, inView] = useIntObs(0.5, false);
     const [offset, setOffset] = useState(50);
     const [timeline_step, timeline_min_offset] = [300, 50];
     const timeline_max_offset = (TimelineData.milestones.length - 2) * -timeline_step + 50;
     const [quote, author] = ["\"Elegance is not a dispensable luxury, but a crucial matter that decides between success and failure.\"", "Edsger W. Dijkstra"];
-    const getBackgroundColor = (width) => {
-        const red = 255;
-        const green = Math.max(0, Math.floor(255 - (width / 100) * 255 + (width <= 20 ? (width / 20) * 255 : 0)));
-        const blue = 0;
-        return `rgb(${red}, ${green}, ${blue})`;
-    };
+   
 
     return (
         <>
@@ -74,8 +69,10 @@ function App() {
                 <TimelineBtnComponent timeline_step={timeline_step} timeline_max_offset={timeline_min_offset} position="left" setOffset={setOffset} />
             </div>
             <div id="footer" className="bg-[#c1c1c1] w-full h-[320px] shadow-[0_-2px_18px_rgba(0,0,0,.3)] relative z-10"></div>
+            <div class="text-style">TEXT</div>
         </>
     );
 }
 
 export default App;
+/*bg-[#E6E6FA]*/
