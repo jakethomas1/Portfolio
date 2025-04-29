@@ -59,8 +59,8 @@ const HomeViewComponent = () => {
                         <source src="/assets/spaceship.mp4" type="video/mp4" />
                     </video>
                     <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,.5)] z-11"></div>
-                    <div id="spaceship_quote_container" className="absolute z-40 bottom-50/100 w-full flex justify-center rounded-[2px] bg-[rgba(0,0,0,.5)]">
-                        <div id="spaceship_quote" className="relative text-[#ffffff] text-[36px] md:text-[44px] font-bold whitespace-nowrap overflow-hidden">{spaceship_quote1}<br></br>
+                    <div id="spaceship_quote_container" className="absolute z-40 bottom-50/100 w-full flex justify-center rounded-[2px] bg-[rgba(0,0,0,.1)]">
+                        <div id="spaceship_quote" className="relative text-[36px] md:text-[44px] font-bold whitespace-nowrap overflow-hidden">{spaceship_quote1}<br></br>
                             <div className="text-[28px] font-bold">{spaceship_quote2}</div></div>
                     </div>
                     <div id="home_link_container" className="absolute z-40 bottom-25/100 w-100/100 flex justify-center">

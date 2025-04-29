@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Khula:700);
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
 @import "tailwindcss";
 
@@ -10,8 +10,8 @@
 /*Make media queries to step down the width of the tiles */
 /*also separate tile caption from image, image gets round border, text gets no background no border*/
 
-body, html {
-    overflow-x: hidden
+body, html, #root {
+    overflow: visible;
 }
 .dot-container {
     @apply border-[0px] z-20 pointer-events-none;
@@ -126,7 +126,14 @@ body, html {
 }
 
 
+@keyframes loadIn {
+    0% {
 
+    }
+    100% {
+    
+    }
+}
 
 
 
@@ -286,6 +293,7 @@ body, html {
     height: 100%;
     text-align: center;
 }
+
 #formerly_root {
     max-width: 1280px;
     margin: 0 auto;

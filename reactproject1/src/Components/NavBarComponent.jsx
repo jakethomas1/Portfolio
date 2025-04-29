@@ -1,8 +1,8 @@
-import App from "../App";
 import AboutComponent from "./AboutComponent";
 import ContactComponent from "./ContactComponent";
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import ProjectComponent from './ProjectComponent';
+import HomeViewComponent from './HomeViewComponent';
 import { useState } from "react";
 import { useClickAway } from '../utils/useClickAway';
 import { useIntObs } from '../utils/useIntObs'
@@ -39,7 +39,7 @@ const NavBarComponent = () => {
                 className={`md:grid md:grid-cols-[1fr_auto_1fr] md:items-center top-0 md:border-[rgba(0,0,0,.25)] md:border-solid md:border-[1px] md:bg-[#fcfae6] md:min-w-[480px] 
                             md:w-full  md:fixed md:z-20 md:left-1/2 md:-translate-x-1/2
                             fixed h-full bg-[rgba(200,200,200,1)] z-20 left-0 transition-[height] duration-200 ease-in-out
-                            ${vis ? 'grid' : 'hidden'} ${endVis ? 'md:h-10/100' : 'md:h-6/100'}`} >
+                            ${vis ? 'grid' : 'hidden'} ${endVis ? 'md:h-10/100' : 'md:h-8/100'}`} >
 
                 <div id="name1" className="font-bask justify-center z-21 text-black text-[24px] h-full content-center pl-[12vw] whitespace-nowrap">Jacob Thomas</div>
 
@@ -61,10 +61,10 @@ const NavBarComponent = () => {
                         </div>
                     </nav>
                     <Routes>
-                        <Route path="/home" component={App} />
-                        <Route path="/about" component={ProjectComponent} />
-                        <Route path="/about" component={AboutComponent} />
-                        <Route path="/contact" component={ContactComponent} />
+                        <Route path="/home" element={<HomeViewComponent />} />
+                        <Route path="/about" element={<ProjectComponent />} />
+                        <Route path="/about" element={<AboutComponent />} />
+                        <Route path="/contact" element={<ContactComponent />} />
                     </Routes>
                 </Router>
 
