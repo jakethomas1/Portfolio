@@ -84,9 +84,12 @@ function App() {
 }
 
 export default App;
+
 /*bg-[#E6E6FA]*/
+
 /*
-after #timeline_bar
+example TimelineBtnComponent usage... possibly good for repurposing, has a good arrow svg:
 <TimelineBtnComponent timeline_step={-timeline_step} timeline_max_offset={timeline_max_offset} position="right" setOffset={setOffset} />
-                    <TimelineBtnComponent timeline_step={timeline_step} timeline_max_offset={timeline_min_offset} position="left" setOffset={setOffset} />*/
-                    /*update*/
+<TimelineBtnComponent timeline_step={timeline_step} timeline_max_offset={timeline_min_offset} position="left" setOffset={setOffset} />
+*/
+                 

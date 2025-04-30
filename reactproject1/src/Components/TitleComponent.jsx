@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const TitleComponent = () => {
     useEffect(() => {
-        document.title = 'jakethomas1'; // Change the document title
+        document.title = 'Jacob Thomas | Software Developer'; // Change the document title
     }, []);
     return null;
 };

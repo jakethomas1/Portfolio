@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+/* Credit Justin "soulwire" Windle from codepen.io/soulwire/pen/mEMPrK */
 class Scrambler {
     constructor(el) {
         this.el = el
