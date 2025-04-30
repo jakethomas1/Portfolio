@@ -66,11 +66,9 @@ class Scrambler {
 export const TextScrambleComponent = () => {
     const elRef = useRef(null)
     const phrases = [
-        'Story',
-        'Journey',
-        "Timeline",
-        'In Progress',
-        "Experience",
+        'Timeline',
+        'About',
+        'Experience',
     ]
 
     useEffect(() => {
@@ -81,7 +79,7 @@ export const TextScrambleComponent = () => {
 
         const next = () => {
             fx.setText(phrases[counter]).then(() => {
-                setTimeout(next, 1800)
+                setTimeout(next, 8000)
             })
             counter = (counter + 1) % phrases.length
         }
@@ -91,7 +89,7 @@ export const TextScrambleComponent = () => {
 
     return (
         <div class="flex justify-center items-center w-full h-full">
-            <div class="text-[32px] font-normal font-[Khula] text-gray-100" ref={elRef}></div>
+            <div class="text-[32px] font-bold font-[Roboto] text-gray-100" ref={elRef}></div>
         </div>
     )
 }

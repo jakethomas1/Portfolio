@@ -49,7 +49,7 @@ const HomeViewComponent = () => {
                     flex flex-col md:flex-row border-b-[1px] border-[#FAF9F6] bg-[#bccccc]`}
             >
 
-                <div className="w-full md:w-1/2 h-[95vh] relative flex justify-center border-b-[1px] md:border-b-[0px] md:border-r-[1px] border-[#FAF9F6]">
+                <div className="w-full md:w-1/2 h-[100vh] relative flex justify-center border-b-[1px] md:border-b-[0px] md:border-r-[1px] border-[#FAF9F6]">
                     <video
                         ref={videoRef}
                         className="absolute top-0 left-0 w-full h-full object-cover opacity-100"
@@ -68,7 +68,7 @@ const HomeViewComponent = () => {
                         <a href="https://linkedin.com/in/jakethomas1" target="_blank" rel="noopener noreferrer" className="home_links text-[#ffffff] text-[20px] font-semibold mx-4 px-8 md:px-12 bg-blue-600 rounded-[4px] py-3 md:py-2">LinkedIn</a>
                     </div>
                 </div>
-                <div className="relative w-full md:w-1/2 h-[95vh] bg-[#181818] vignette border-t-[1px] md:border-l-[1px] border-black flex flex-col items-center justify-center">
+                <div className="relative w-full md:w-1/2 h-[100vh] bg-[#181818] vignette border-t-[1px] md:border-l-[1px] border-black flex flex-col items-center justify-center">
                     <div id="homepage_text_container" className="text-white text-[18px] relative flex flex-col items-center w-1/2 mb-[90px] overflow-hidden">
                         {bio1}
                         <div className="h-[40px] w-full"></div>
