@@ -49,7 +49,7 @@ const NavBarComponent = () => {
                             <Link to="/home" onClick={() => { jumpTo('homeview'); setVis(false); }} className={`nav_link`}>Home</Link>
                             <Link to="/projects" onClick={() => { jumpTo('projectsview'); setVis(false); }} className="nav_link">Projects</Link>
                             <Link to="/about" 
-                                onClick={() => { jumpTo('timelineview_container'); setVis(false); }}
+                                onClick={() => { jumpTo('timelineview_container_scroller'); setVis(false); }}
                                 className="nav_link">About</Link>
                             <Link
                                 to="/contact"
@@ -59,13 +59,7 @@ const NavBarComponent = () => {
                             }}
                                 className="nav_link">Contact</Link>
                         </div>
-                    </nav>
-                    <Routes>
-                        <Route path="/home" element={<HomeViewComponent />} />
-                        <Route path="/about" element={<ProjectComponent />} />
-                        <Route path="/about" element={<AboutComponent />} />
-                        <Route path="/contact" element={<ContactComponent />} />
-                    </Routes>
+                    </nav> 
                 </Router>
 
                 <div className="justify-self-end w-0"></div>

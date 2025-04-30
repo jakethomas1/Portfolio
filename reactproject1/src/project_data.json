@@ -24,7 +24,7 @@
       "name": "Autoclicka",
       "script": "autoclicker.py",
       "languages": [ "Python3" ],
-      "description": "A Python script using tkinter and pynput to create a minimalist customizable rapid automatic clicking application (i.e. autoclicker).",
+      "description": "A minimalist Python script using tkinter and pynput to create a robust automatic clicking application (i.e. autoclicker).",
       "image": "autoclicker-pic.png",
       "video": "autoclicker-video.mp4"
     }

@@ -12,10 +12,8 @@ export const useSectionInView = () => {
             if (!ref.current || !isVisible) return;
 
             const rect = ref.current.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-
-            const scrollStart = viewportHeight;
-            const scrollEnd = -rect.height;
+            const scrollStart = 0;
+            const scrollEnd = window.innerHeight - rect.height; 
             const scrollRange = scrollStart - scrollEnd;
             const current = scrollStart - rect.top;
 
