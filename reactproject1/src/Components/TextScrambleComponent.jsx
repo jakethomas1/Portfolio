@@ -88,7 +88,7 @@ export const TextScrambleComponent = () => {
     }, [])
 
     return (
-        <div class="flex justify-center items-center w-full h-full">
+        <div class="flex justify-center items-center w-full h-full z-5">
             <div class="text-[32px] font-bold font-[Roboto] text-gray-100" ref={elRef}></div>
         </div>
     )

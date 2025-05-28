@@ -10,14 +10,35 @@ import TimelineComponent from './Components/TimelineComponent'
 import ProjectData from './project_data.json'
 import TimelineData from './timeline_data.json'
 import { useIntObs } from './utils/useIntObs';
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import TimelineBtnComponent from "./Components/TimelineBtnComponent";
 import TimelineScrollComponent from "./Components/TimelineScrollComponent"
 import { useSectionInView } from './utils/useSectionInView';
 import { TextScrambleComponent } from './Components/TextScrambleComponent';
 import { interpolate, interpolateColors } from './utils/interpolate'
+import SlideBioComponent from "./Components/SlideBioComponent"
+import useActiveSectionTracker from "./utils/useActiveSectionTracker";
+
 function App() {
     const [timelineRef, inView] = useIntObs(0.5, false);
+    //Note: threshold is calculated as follows:
+    //  (desired % in view) / (section height in vh / 100vh)
+    //  e.g. (.5) / (300vh / 100) = .1667 ... only applicable in sections larger than 100vh
+    // note: projectsview has dynamic height, must get clever using absolute ele with height:calc(100%-100vh) basically the middlepoint marker
+    const [homeRef, homeInView] = useIntObs(0.1, false); 
+    const [projectsRef, projectsInView] = useIntObs(.1, false);
+    const [aboutRef, aboutInView] = useIntObs(1, false); 
+    const [contactRef, contactInView] = useIntObs(1, false);
+    const [activeSection, setActiveSection] = useState('home');
+    //^ too many state variables
+    useActiveSectionTracker({
+        homeInView,
+        projectsInView,
+        aboutInView,
+        contactInView,
+        setActiveSection,
+    });
+
     const [quote, author] = ["\"Elegance is not a dispensable luxury, but a crucial matter that decides between success and failure.\"", "Edsger W. Dijkstra"];
     const [tlRef, tlProgress] = useSectionInView();
 
@@ -27,9 +48,9 @@ function App() {
         <>
             <TitleComponent />
             <LandingPageComponent />
-            <NavBarComponent />
-            <HomeViewComponent />
-            <div id="projectsview" className="bg-[#040203] shadow-[0_2px_18px_rgba(0,0,0,.3)] relative z-10">
+            <NavBarComponent activeBtn={activeSection} />
+            <SlideBioComponent homeRef={homeRef} />
+            <div ref={projectsRef} id="projectsview" className="bg-[#040203] shadow-[0_2px_18px_rgba(0,0,0,.3)] relative z-10">
                 <div id="projectsview_container" className="pt-[16px] pb-[18px] bg-[#040203]">
                     <ConsoleComponent />
                     <div
@@ -50,18 +71,20 @@ function App() {
                 </div>
             </div>
             <div id="timelineview_container_scroller"
-                className={`relative h-[3000px] w-full ${!inView ? 'bg-[#6b667d]' : 'bg-[#7D666D]'} overflow-visible`}
+                className={`relative h-[3000px] w-full overflow-visible`}
                 ref={tlRef}>
+                <div id="timelineview_para_container"
+                    className=""></div>
                 <div
                     id="timelineview_container"
                     ref={timelineRef}
-                    className={`sticky top-[8vh] min-h-[92vh] w-full flex justify-center overflow-hidden 
+                    className={`sticky top-0 md:top-[8vh] min-h-[100vh] w-full flex justify-center overflow-hidden 
                                 items-center transition-background duration-1500 ease-in-out
                                 ${!inView ? 'bg-[#191f23]' : 'bg-[#191f23]'}`}
                     style={{
                         backgroundColor: `${interpolateColors('#191f23', '#a27f74', tlProgress)}`,
                     }}                >
-                    <div id="timeline_title_text" className={`absolute top-[12px] z-12 transition-opacity delay-900 duration-550 ease-in-out ${!inView ? 'opacity-0' : 'opacity-100'}`}>
+                    <div id="timeline_title_text" className={`absolute top-[12px] transition-opacity delay-900 duration-550 ease-in-out ${!inView ? 'opacity-100' : 'opacity-100'}`}>
                         <TextScrambleComponent />
                     </div>
                     <div id="timeline_window" className={`absolute min-w-8/10 max-w-8/10 h-[800px] overflow-hidden transition-background duration-1500 ease-in-out bg-[rgba(0,0,0,0)]}`}
@@ -80,13 +103,13 @@ function App() {
                                     <TimelineComponent key={index} index={index} {...milestone} />
                                 ))}
                         </div>
-                        <div id="timeline_bar" className="h-[4px] w-full absolute bg-black top-[50%] -translate-y-[50%]"></div>
+                        <div ref={aboutRef} id="timeline_bar" className="h-[4px] w-full absolute bg-[#535353] top-[50%] -translate-y-[50%]"></div>
                     </div>
                     
                     
                 </div>
             </div>
-            <div id="footer" className="bg-[#c1c1c1] w-full h-[210px] shadow-[0_-2px_18px_rgba(0,0,0,.3)] relative z-10"></div>
+            <div ref={contactRef} id="footer" className="bg-[#c1c1c1] w-full h-[210px] shadow-[0_-2px_18px_rgba(0,0,0,.3)] relative z-10"></div>
         </>
     );
 }
@@ -94,10 +117,54 @@ function App() {
 export default App;
 
 /*bg-[#E6E6FA] bg-[#7D666D]*/
-
+/*timeline color pink: #a27f74
 /*
 example TimelineBtnComponent usage... possibly good for repurposing, has a good arrow svg:
 <TimelineBtnComponent timeline_step={-timeline_step} timeline_max_offset={timeline_max_offset} position="right" setOffset={setOffset} />
 <TimelineBtnComponent timeline_step={timeline_step} timeline_max_offset={timeline_min_offset} position="left" setOffset={setOffset} />
+
+change:
+1. scrollbar-color
+rgb(20, 20, 22) rgb(6, 6, 6)
+
+2. change fonts to local versions (not imported from google api)
+
+3. load in animations for everything, special reset animations for timeline
+
+4. another pass at mobile version, implement scroll snapping for touch devices, check media query for touch devices
+
+5. Track down why tailwindcss custom font aliases don't work (tailwind.config.css)
+
+6. Check ssl configuration in dev environment, ensure no overwriting for production
+
+7. add parallax background somewhere (maybe to timeline too)
+
+8. change landing page to something befitting a programmer, get inspiration from video game trailer opening sequence or something
+- fibonacci sequence character animation
+- character has gravity to end position, starting position and initial velocity are randomized, calculate position every frame using acceleration to end position
+
+9. timeline component mobile version (sticky top position match navbar dynamic)
+
+10. fix navbar animation delay to be attached to landing page animation using animation event, such that do not have to add artificial 1.5s delay that reoccurs on resizing window
+
+11. Touch up projects page, hover animation shoul dbe better, center and resize programming icon probably, maybe just add a special styling for one or two of them to help 
+information processing...
+
+12. add action to projects page, click on project does soemthing, hover does something better (play gif/video), triple dot on right side like youtube  
+
+13. (anim idea) svg connecting lines with javascript updaing positions of elements for dynamic positioning 
+
+14. blog section: use https://magill.dev/post/lets-breakdown-my-website as inspiration
+post abt tech stack
+possibly about keyboards
+other development
+key breakthroughs ??? maybe not
+
+priority (only 2 issues allowed):
+home page revamp (just need image and finalize links left)
+load in animations
+
+on deck (1 issue allowed):
+navbar location highlight
 */
                  

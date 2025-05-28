@@ -2,8 +2,8 @@ import { fileURLToPath, URL } from 'node:url';
 
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite'
+import react from '@vitejs/plugin-react';
 
-import plugin from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
@@ -42,7 +42,7 @@ import { env } from 'process';
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
-        plugin(),
+        react(),
         tailwindcss(),
     ],
     resolve: {
