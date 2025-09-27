@@ -5,6 +5,7 @@ export default {
         extend: {
             screens: {
                 'u-3': '1564px',
+                'xs3': '367px'
             },
             fontFamily: {
                 sourcecode: ['"Source Code Pro"', 'monospace'],

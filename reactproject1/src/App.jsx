@@ -1,34 +1,31 @@
 import "./App.css";
 import "./config.css";
-import LandingPageComponent from "./Components/LandingPageComponent";
 import TitleComponent from "./Components/TitleComponent";
 import NavBarComponent from "./Components/NavBarComponent";
-import HomeViewComponent from "./Components/HomeViewComponent";
 import ProjectComponent from './Components/ProjectComponent';
 import ConsoleComponent from './Components/ConsoleComponent';
 import TimelineComponent from './Components/TimelineComponent'
 import ProjectData from './project_data.json'
 import TimelineData from './timeline_data.json'
 import { useIntObs } from './utils/useIntObs';
-import { useState, useLayoutEffect } from "react";
-import TimelineBtnComponent from "./Components/TimelineBtnComponent";
-import TimelineScrollComponent from "./Components/TimelineScrollComponent"
+import { useState } from "react";
 import { useSectionInView } from './utils/useSectionInView';
 import { TextScrambleComponent } from './Components/TextScrambleComponent';
 import { interpolate, interpolateColors } from './utils/interpolate'
 import SlideBioComponent from "./Components/SlideBioComponent"
 import useActiveSectionTracker from "./utils/useActiveSectionTracker";
+import FooterComponent from "./Components/FooterComponent";
 
 function App() {
-    const [timelineRef, inView] = useIntObs(0.5, false);
+   
     //Note: threshold is calculated as follows:
     //  (desired % in view) / (section height in vh / 100vh)
     //  e.g. (.5) / (300vh / 100) = .1667 ... only applicable in sections larger than 100vh
     // note: projectsview has dynamic height, must get clever using absolute ele with height:calc(100%-100vh) basically the middlepoint marker
-    const [homeRef, homeInView] = useIntObs(0.1, false); 
-    const [projectsRef, projectsInView] = useIntObs(.1, false);
-    const [aboutRef, aboutInView] = useIntObs(1, false); 
-    const [contactRef, contactInView] = useIntObs(1, false);
+    const [homeRef, homeInView] = useIntObs(0.4, false); 
+    const [projectsRef, projectsInView] = useIntObs(.4, false);
+    const [aboutRef, aboutInView] = useIntObs(.4 , false); 
+    const [footerRef, contactInView] = useIntObs(.4, false);
     const [activeSection, setActiveSection] = useState('home');
     //^ too many state variables
     useActiveSectionTracker({
@@ -47,9 +44,9 @@ function App() {
     return (
         <>
             <TitleComponent />
-            <LandingPageComponent />
+            {/* Add renewed landing page component if desired*/ }
             <NavBarComponent activeBtn={activeSection} />
-            <SlideBioComponent homeRef={homeRef} />
+            <SlideBioComponent homeRef={homeRef} homeInView={homeInView}/>
             <div ref={projectsRef} id="projectsview" className="bg-[#040203] shadow-[0_2px_18px_rgba(0,0,0,.3)] relative z-10">
                 <div id="projectsview_container" className="pt-[16px] pb-[18px] bg-[#040203]">
                     <ConsoleComponent />
@@ -77,17 +74,19 @@ function App() {
                     className=""></div>
                 <div
                     id="timelineview_container"
-                    ref={timelineRef}
                     className={`sticky top-0 md:top-[8vh] min-h-[100vh] w-full flex justify-center overflow-hidden 
                                 items-center transition-background duration-1500 ease-in-out
-                                ${!inView ? 'bg-[#191f23]' : 'bg-[#191f23]'}`}
+                                ${!aboutInView ? 'bg-[#191f23]' : 'bg-[#191f23]'}`}
                     style={{
-                        backgroundColor: `${interpolateColors('#191f23', '#a27f74', tlProgress)}`,
+                        backgroundColor: `${interpolateColors('#000', '#477998', tlProgress)}`,
                     }}                >
-                    <div id="timeline_title_text" className={`absolute top-[12px] transition-opacity delay-900 duration-550 ease-in-out ${!inView ? 'opacity-100' : 'opacity-100'}`}>
+                    <div id="timeline_title_text" className={`absolute top-[12px] transition-opacity delay-900 duration-550 ease-in-out ${!aboutInView ? 'opacity-100' : 'opacity-100'}`}>
                         <TextScrambleComponent />
                     </div>
-                    <div id="timeline_window" className={`absolute min-w-8/10 max-w-8/10 h-[800px] overflow-hidden transition-background duration-1500 ease-in-out bg-[rgba(0,0,0,0)]}`}
+                    <div
+                        ref={aboutRef}
+                        id="timeline_window"
+                        className={`absolute min-w-8/10 max-w-8/10 h-[800px] overflow-hidden transition-background duration-1500 ease-in-out bg-[rgba(0,0,0,0)]}`}
                         style={{
                             maskImage: 'linear-gradient(to right, transparent 0%, black 9%, black 91%, transparent 100%)',
                             WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 9%, black 91%, transparent 100%)',
@@ -103,19 +102,19 @@ function App() {
                                     <TimelineComponent key={index} index={index} {...milestone} />
                                 ))}
                         </div>
-                        <div ref={aboutRef} id="timeline_bar" className="h-[4px] w-full absolute bg-[#535353] top-[50%] -translate-y-[50%]"></div>
+                        <div id="timeline_bar" className="h-[4px] w-full absolute bg-[#535353] top-[50%] -translate-y-[50%]"></div>
                     </div>
                     
                     
                 </div>
             </div>
-            <div ref={contactRef} id="footer" className="bg-[#c1c1c1] w-full h-[210px] shadow-[0_-2px_18px_rgba(0,0,0,.3)] relative z-10"></div>
+            <FooterComponent footerRef={footerRef} />
         </>
     );
 }
 
 export default App;
-
+/*'#191f23', '#a27f74'*/
 /*bg-[#E6E6FA] bg-[#7D666D]*/
 /*timeline color pink: #a27f74
 /*

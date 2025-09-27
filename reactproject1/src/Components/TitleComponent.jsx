@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const TitleComponent = () => {
     useEffect(() => {
-        document.title = 'Jacob Thomas | Software Developer'; // Change the document title
+        document.title = 'Jacob Thomas | Software Developer'; // Initial state of this should be set in index.html
     }, []);
     return null;
 };
