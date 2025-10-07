@@ -4,18 +4,19 @@ import TitleComponent from "./Components/TitleComponent";
 import NavBarComponent from "./Components/NavBarComponent";
 import ProjectComponent from './Components/ProjectComponent';
 import ConsoleComponent from './Components/ConsoleComponent';
-import TimelineComponent from './Components/TimelineComponent'
-import ProjectData from './project_data.json'
-import TimelineData from './timeline_data.json'
+import TimelineComponent from './Components/TimelineComponent';
+import TimelineScroller from './Components/TimelineScroller';
+import ProjectData from './data/project_data.json'
+import TimelineData from './data/timeline_data.json'
 import { useIntObs } from './utils/useIntObs';
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useSectionInView } from './utils/useSectionInView';
 import { TextScrambleComponent } from './Components/TextScrambleComponent';
 import { interpolate, interpolateColors } from './utils/interpolate'
 import SlideBioComponent from "./Components/SlideBioComponent"
 import useActiveSectionTracker from "./utils/useActiveSectionTracker";
 import FooterComponent from "./Components/FooterComponent";
-
+import { motion, useMotionValue, useTransform } from "motion/react";
 function App() {
    
     //Note: threshold is calculated as follows:
@@ -35,10 +36,11 @@ function App() {
         contactInView,
         setActiveSection,
     });
-
+    
     const [quote, author] = ["\"Elegance is not a dispensable luxury, but a crucial matter that decides between success and failure.\"", "Edsger W. Dijkstra"];
-    const [tlRef, tlProgress] = useSectionInView();
-
+    /*const [tlRef, tlProgress] = useSectionInView();*/
+    const [tlRef, tlInView] = useIntObs(.4, false);
+    /*const translateX = useTransform(tlProgress, [0, 1], [650, -2200]);*/
     
 
     return (
@@ -67,53 +69,18 @@ function App() {
                     </div>
                 </div>
             </div>
-            <div id="timelineview_container_scroller"
-                className={`relative h-[3000px] w-full overflow-visible`}
-                ref={tlRef}>
-                <div id="timelineview_para_container"
-                    className=""></div>
-                <div
-                    id="timelineview_container"
-                    className={`sticky top-0 md:top-[8vh] min-h-[100vh] w-full flex justify-center overflow-hidden 
-                                items-center transition-background duration-1500 ease-in-out
-                                ${!aboutInView ? 'bg-[#191f23]' : 'bg-[#191f23]'}`}
-                    style={{
-                        backgroundColor: `${interpolateColors('#000', '#477998', tlProgress)}`,
-                    }}                >
-                    <div id="timeline_title_text" className={`absolute top-[12px] transition-opacity delay-900 duration-550 ease-in-out ${!aboutInView ? 'opacity-100' : 'opacity-100'}`}>
-                        <TextScrambleComponent />
-                    </div>
-                    <div
-                        ref={aboutRef}
-                        id="timeline_window"
-                        className={`absolute min-w-8/10 max-w-8/10 h-[800px] overflow-hidden transition-background duration-1500 ease-in-out bg-[rgba(0,0,0,0)]}`}
-                        style={{
-                            maskImage: 'linear-gradient(to right, transparent 0%, black 9%, black 91%, transparent 100%)',
-                            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 9%, black 91%, transparent 100%)',
-                        }}>
-                    
-                        <div
-                            id="timelineview"
-                            className={`z-5 flex flex-row items-center relative min-w-max h-full transition-transform duration-1000 ease-in-out `} 
-                            style={{
-                                transform: `translateX(${interpolate(650, -2200, tlProgress)}px)`,
-                            }}>
-                                {TimelineData.milestones.map((milestone, index) => (
-                                    <TimelineComponent key={index} index={index} {...milestone} />
-                                ))}
-                        </div>
-                        <div id="timeline_bar" className="h-[4px] w-full absolute bg-[#535353] top-[50%] -translate-y-[50%]"></div>
-                    </div>
-                    
-                    
-                </div>
-            </div>
+            <TimelineScroller tlRef={tlRef} aboutRef={aboutRef} />
             <FooterComponent footerRef={footerRef} />
         </>
     );
 }
 
 export default App;
+/*
+style={{
+    transform: `translateX(${interpolate(650, -2200, tlProgress)}px)`,
+}}
+*/
 /*'#191f23', '#a27f74'*/
 /*bg-[#E6E6FA] bg-[#7D666D]*/
 /*timeline color pink: #a27f74

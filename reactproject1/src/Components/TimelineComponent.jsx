@@ -28,7 +28,7 @@ const TimelineComponent = ({ index, year, title, description }) => {
             <div id="timeline_tick_mark" className={`w-[4px] bg-[#535353] absolute top-0 left-1/2 top-1/2 -translate-y-1/2 z-15`}
                 style={{
                     height: `${randomOffset / 2}px`,
-                    transform: `${index % 2 == 0 ? 'translateY(-50%)' : 'translateY(50%)'}`,
+                    transform: `${index % 2 == 1 ? 'translateY(-50%)' : 'translateY(50%)'}`,
                 }}></div>
         </div>
             

@@ -17,6 +17,11 @@ body, html, #root {
     overflow: visible;
     background-color: #040203;
 }
+
+#timelineview {
+    will-change: transform;
+}
+
 .dot-container {
     @apply border-[0px] z-20 pointer-events-none;
     background-color: transparent;

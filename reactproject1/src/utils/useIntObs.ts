@@ -11,8 +11,8 @@ export const useIntObs = (threshold = 0.5, once = true) => {
 
         observerRef.current = new IntersectionObserver(
             ([entry]) => {
-                console.log('Element:', entry.target);               // the DOM element being observed
-                console.log('intersectionRatio:', entry.intersectionRatio);
+                /*console.log('Element:', entry.target);               // the DOM element being observed
+                console.log('intersectionRatio:', entry.intersectionRatio);*/
                 if (entry.isIntersecting) {
                     setInView(true);
                     if (once && observerRef.current) {

@@ -3,11 +3,12 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react';
+import flowPlugin from 'esbuild-plugin-flow';
 
-import fs from 'fs';
+/* import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
-import { env } from 'process';
+import { env } from 'process'; */
 
 //const baseFolder =
 //    env.APPDATA !== undefined && env.APPDATA !== ''
@@ -47,8 +48,9 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
-        }
+            '@': fileURLToPath(new URL('./src', import.meta.url)),
+            'react-native': 'react-native-web',
+        },
     },
     server: {
         port: 3000,
@@ -57,5 +59,19 @@ export default defineConfig({
         //    key: fs.readFileSync(keyFilePath),
         //    cert: fs.readFileSync(certFilePath),
         //}
+    },
+    optimizeDeps: {
+        include: [
+            'react',
+            'react-dom',
+            'react-router-dom',
+            'react-native-web',
+            'motion',
+            'motion/react',
+        ],
+        esbuildOptions: {
+            // Apply the Flow stripping plugin
+            plugins: [flowPlugin()],
+        },
     }
 })
