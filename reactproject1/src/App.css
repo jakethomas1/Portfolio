@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -158,12 +159,15 @@ body, html, #root {
     animation: navbarMobileExpand 220ms cubic-bezier(.1,.85,0,1) both;
 }
 
-#name1 {
+.font-bask {
     font-family: 'Libre Baskerville';
 }
 
-.font-bask {
-    font-family: 'Libre Baskerville';
+
+.font-expletus {
+    font-family: "Expletus Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 

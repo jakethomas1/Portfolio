@@ -43,8 +43,8 @@ const NavBarComponent = ({ activeBtn }) => {
                 />
                 <div id="mobile_navbar_text"
                     className="w-[calc(100%)] relative text-middle flex flex-row items-center
-                                font-bask justify-center text-inherit font-bold animate-slide-down
-                                uppercase text-[14px] h-full content-center whitespace-nowrap">
+                                font-expletus justify-center text-inherit font-bold animate-slide-down
+                                capitalize text-[18px] h-full content-center whitespace-nowrap">
                     
                     <div className="">Jacob Thomas</div>
                 </div>
@@ -64,15 +64,14 @@ const NavBarComponent = ({ activeBtn }) => {
                 id="navbar"
                 className={`md:grid md:grid-cols-[1fr_auto_1fr] md:fixed flex-col 
                             md:items-center top-0 md:border-[rgba(0,0,0,.25)] md:border-solid md:border-[1px]  md:min-w-[480px] 
-                            md:w-[100%] z-21 md:z-20 w-11/20
-                            fixed h-full bg-[rgba(200,200,200,1)] z-20 right-0 transition-[height,background] 
+                            md:w-[100%] md:z-20 w-11/20
+                            fixed h-fit bg-[rgba(200,200,200,1)] z-22 right-0 transition-[height,background] 
                             duration-200 ease-in-out min-h-[70px]
                             ${vis ? 'flex animate-navbar-mobile-expand' : 'hidden'} ${endVis ? 'md:h-10/100 md:bg-[#fcfae6] text-black' : 'text-white md:backdrop-blur-md md:bg-[rgba(0,0,0,.65)] md:h-8/100'}`} >
 
                 <div
-                    id="name1"
-                    className="font-bask justify-center z-21 text-inherit font-bold animate-slide-down
-                                uppercase text-[20px] h-full content-center pl-[0] whitespace-nowrap hidden md:block">
+                    className="font-expletus justify-center z-21 text-inherit font-bold animate-slide-down
+                                uppercase text-[26px] h-full content-center pl-[0] whitespace-nowrap hidden md:block">
                     Jacob Thomas</div>
 
                 
@@ -82,7 +81,8 @@ const NavBarComponent = ({ activeBtn }) => {
                 
 
                 <div className="w-full h-full">
-                    <div className="nav_link_container flex flex-col md:flex-row h-full w-full justify-end items-center text-left text-middle pr-6">
+                    <div className="nav_link_container flex flex-col md:flex-row h-full w-full justify-start md:justify-end items-center text-left text-middle 
+                                    backdrop-sepia-30 md:backdrop-none md:pr-6">
                         {navLinks.map((link, index) => (
                             <Link
                                 key={link.to}
@@ -92,7 +92,7 @@ const NavBarComponent = ({ activeBtn }) => {
                                     setVis(false);
                                 }}
                                 style={{ animationDelay: `${index * 0.2}s` }}
-                                className={`nav_link ${activeBtn === link.name.toLowerCase() ? 'text-[#F15030]' : 'text-black md:text-inherit'}`}
+                                className={`nav_link ${activeBtn === link.name.toLowerCase() ? 'text-[#800080] md:text-[#F15030]' : 'text-black md:text-inherit'}`}
                             >
                                 {link.name}
                             </Link>
@@ -103,7 +103,7 @@ const NavBarComponent = ({ activeBtn }) => {
             <div ref={scollSentinel} id="scroll-position-sent" className="absolute top-[150px]"></div>
             <div
                 id="mobile-clickout-overlay"
-                className={`${vis ? 'fixed' : 'hidden'} w-full h-full bg-black opacity-50 z-20`}
+                className={`${vis ? 'fixed' : 'hidden'} w-full h-full bg-black opacity-50 z-21 top-0`}
             ></div>
         </>
     );

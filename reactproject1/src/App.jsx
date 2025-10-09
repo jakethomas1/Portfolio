@@ -24,7 +24,7 @@ function App() {
     //  e.g. (.5) / (300vh / 100) = .1667 ... only applicable in sections larger than 100vh
     // note: projectsview has dynamic height, must get clever using absolute ele with height:calc(100%-100vh) basically the middlepoint marker
     const [homeRef, homeInView] = useIntObs(0.4, false); 
-    const [projectsRef, projectsInView] = useIntObs(.4, false);
+    const [projectsRef, projectsInView] = useIntObs(.1, false);
     const [aboutRef, aboutInView] = useIntObs(.4 , false); 
     const [footerRef, contactInView] = useIntObs(.4, false);
     const [activeSection, setActiveSection] = useState('home');
