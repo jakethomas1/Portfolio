@@ -16,7 +16,7 @@ import { interpolate, interpolateColors } from './utils/interpolate'
 import SlideBioComponent from "./Components/SlideBioComponent"
 import useActiveSectionTracker from "./utils/useActiveSectionTracker";
 import FooterComponent from "./Components/FooterComponent";
-import { motion, useMotionValue, useTransform } from "motion/react";
+
 function App() {
    
     //Note: threshold is calculated as follows:
