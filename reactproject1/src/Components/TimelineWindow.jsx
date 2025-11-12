@@ -9,11 +9,7 @@ export default function TimelineWindow({ tlRef }) {
         <div
             ref={tlRef}
             id="timeline_window"
-            className="absolute min-w-8/10 max-w-8/10 h-[800px] overflow-hidden transition-background duration-1500 ease-in-out bg-[rgba(0,0,0,0)]"
-            style={{
-                maskImage: "linear-gradient(to right, transparent 0%, black 9%, black 91%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 9%, black 91%, transparent 100%)",
-            }}
+            className="absolute min-w-19/20 max-w-19/20 md:min-w-8/10 md:max-w-8/10 h-[800px] overflow-hidden transition-background duration-1500 ease-in-out bg-[rgba(0,0,0,0)] mask-desktop"
         >
             <div
                 id="timelineview"

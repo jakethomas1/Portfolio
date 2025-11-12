@@ -62,10 +62,10 @@ const NavBarComponent = ({ activeBtn }) => {
             <div
                 ref={navref}
                 id="navbar"
-                className={`md:grid md:grid-cols-[1fr_auto_1fr] md:fixed flex-col 
+                className={`md:grid md:grid-cols-[1fr_auto_1fr] md:fixed flex-col md:rounded-none rounded-bl-[8px]
                             md:items-center top-0 md:border-[rgba(0,0,0,.25)] md:border-solid md:border-[1px]  md:min-w-[480px] 
                             md:w-[100%] md:z-20 w-11/20
-                            fixed h-fit bg-[rgba(200,200,200,1)] z-22 right-0 transition-[height,background] 
+                            fixed h-auto bg-[rgba(200,200,200,1)] z-22 right-0 transition-[height,background] 
                             duration-200 ease-in-out min-h-[70px]
                             ${vis ? 'flex animate-navbar-mobile-expand' : 'hidden'} ${endVis ? 'md:h-10/100 md:bg-[#fcfae6] text-black' : 'text-white md:backdrop-blur-md md:bg-[rgba(0,0,0,.65)] md:h-8/100'}`} >
 
@@ -80,22 +80,28 @@ const NavBarComponent = ({ activeBtn }) => {
                 </div> 
                 
 
-                <div className="w-full h-full">
+                <div className="w-full h-full rounded-[8px]">
                     <div className="nav_link_container flex flex-col md:flex-row h-full w-full justify-start md:justify-end items-center text-left text-middle 
-                                    backdrop-sepia-30 md:backdrop-none md:pr-6">
+                                    backdrop-sepia-30 md:backdrop-sepia-0 md:pr-6 ">
                         {navLinks.map((link, index) => (
-                            <Link
-                                key={link.to}
-                                to={link.to}
-                                onClick={() => {
-                                    jumpTo(link.id);
-                                    setVis(false);
-                                }}
-                                style={{ animationDelay: `${index * 0.2}s` }}
-                                className={`nav_link ${activeBtn === link.name.toLowerCase() ? 'text-[#800080] md:text-[#F15030]' : 'text-black md:text-inherit'}`}
-                            >
-                                {link.name}
-                            </Link>
+                            <div key={link.to} className="relative flex w-full md:w-auto rounded-bl-[8px] md:rounded-none">
+                                <Link
+                                    to={link.to}
+                                    onClick={() => {
+                                        jumpTo(link.id);
+                                        setVis(false);
+                                    }}
+                                    style={{ animationDelay: `${index * 0.2}s` }}
+                                    className={`nav_link 
+                                        ${activeBtn === link.name.toLowerCase() ? 'text-[#800080] md:text-[#F15030]' : 'text-black md:text-inherit'} 
+                                        `}
+                                >
+                                    {link.name}
+                                </Link>
+                                <div className={`absolute md:top-0 md:right-0 bottom-0 left-0 w-full h-full block md:hidden pointer-events-none 
+                                            border-b-[2px] border-[rgb(90,90,90)] md:border-none z-[-1]
+                                            ${index === navLinks.length - 1 ? 'md:rounded-none rounded-bl-[8px]' : ''}`}></div>
+                            </div>
                         ))}
                     </div>
                 </div>
