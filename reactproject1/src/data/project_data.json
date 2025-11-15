@@ -4,21 +4,24 @@
       "name": "ACMHackathon2025",
       "languages": [ "Python3" ],
       "description": "Achieved 2nd place in ACM at CSUSM's first hackathon as a solo developer.",
-      "image": "acmhackathon2025_results.png"
+      "image": "acmhackathon2025_results.png",
+      "repo_url": "https://github.com/jakethomas1/ACMHackathon2025"
     },
     {
       "name": "Transcribo",
       "script": "totext.py",
       "languages": [ "Python3" ],
       "description": "A Python script using Google Speech Recognition API for transcription.",
-      "image": "transcribo-pic.png"
+      "image": "transcribo-pic.png",
+      "repo_url": "https://github.com/jakethomas1/Transcribo"
     },
     {
       "name": "ConvertToGif",
       "script": "gifCreate.sh",
       "languages": [ "Bash" ],
       "description": "A Bash script using ffmpeg and giflossy to mass convert all .mp4 files in a given folder to optimized .gif files.",
-      "image": "gifcreate-pic.png"
+      "image": "gifcreate-pic.png",
+      "repo_url": "https://github.com/jakethomas1/ConvertToGif"
     },
     {
       "name": "Autoclicka",
@@ -26,7 +29,8 @@
       "languages": [ "Python3" ],
       "description": "A minimalist Python script using tkinter and pynput to create a robust automatic clicking application (i.e. autoclicker).",
       "image": "autoclicker-pic.png",
-      "video": "autoclicker-video.mp4"
+      "video": "autoclicker-video.mp4",
+      "repo_url": "https://github.com/jakethomas1/Autoclicka"
     }
   ]
 }

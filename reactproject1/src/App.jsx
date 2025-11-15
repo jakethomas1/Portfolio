@@ -2,10 +2,11 @@ import "./App.css";
 import "./config.css";
 import TitleComponent from "./Components/TitleComponent";
 import NavBarComponent from "./Components/NavBarComponent";
-import ProjectComponent from './Components/ProjectComponent';
-import ConsoleComponent from './Components/ConsoleComponent';
+
+
 import TimelineComponent from './Components/TimelineComponent';
 import TimelineScroller from './Components/TimelineScroller';
+import ProjectsViewComponent from './Components/ProjectsViewComponent';
 import ProjectData from './data/project_data.json'
 import TimelineData from './data/timeline_data.json'
 import { useIntObs } from './utils/useIntObs';
@@ -16,6 +17,7 @@ import { interpolate, interpolateColors } from './utils/interpolate'
 import SlideBioComponent from "./Components/SlideBioComponent"
 import useActiveSectionTracker from "./utils/useActiveSectionTracker";
 import FooterComponent from "./Components/FooterComponent";
+
 
 function App() {
    
@@ -37,7 +39,7 @@ function App() {
         setActiveSection,
     });
     
-    const [quote, author] = ["\"Elegance is not a dispensable luxury, but a crucial matter that decides between success and failure.\"", "Edsger W. Dijkstra"];
+    
     /*const [tlRef, tlProgress] = useSectionInView();*/
     const [tlRef, tlInView] = useIntObs(.4, false);
     /*const translateX = useTransform(tlProgress, [0, 1], [650, -2200]);*/
@@ -48,27 +50,9 @@ function App() {
             <TitleComponent />
             {/* Add renewed landing page component if desired*/ }
             <NavBarComponent activeBtn={activeSection} />
-            <SlideBioComponent homeRef={homeRef} homeInView={homeInView}/>
-            <div ref={projectsRef} id="projectsview" className="bg-[#040203] shadow-[0_2px_18px_rgba(0,0,0,.3)] relative z-10">
-                <div id="projectsview_container" className="pt-[16px] pb-[18px] bg-[#040203]">
-                    <ConsoleComponent />
-                    <div
-                        id="ProjectsComponent_container"
-                        className="flex flex-col justify-center items-center md:grid md:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] 
-                                   gap-x-[32px] gap-y-22 pt-32 pb-42 mx-auto w-full md:max-w-[751px]
-                                   [@media(min-width:1049px)]:max-w-[1032px] [@media(min-width:1581px)]:max-w-[1564px]
-                                   place-items-center">
-                        {ProjectData.projects.map((project, index) => (
-                            <ProjectComponent key={index} {...project} />
-                        ))}
-                    </div>
-                    <div className="flex w-full relative justify-center text-[#aaa]">
-                        <div className="relative flex flex-col w-[320px] md:w-[440px] text-left">{quote}
-                            <div className="text-right">{author}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <SlideBioComponent homeRef={homeRef} homeInView={homeInView} />
+            <ProjectsViewComponent projectsRef={projectsRef} />
+            
             <TimelineScroller tlRef={tlRef} aboutRef={aboutRef} />
             <FooterComponent footerRef={footerRef} />
         </>
