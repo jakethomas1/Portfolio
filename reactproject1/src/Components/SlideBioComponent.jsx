@@ -4,7 +4,7 @@ import BtnComponentWhite from './BtnComponentWhite';
 import { useIntObs } from '../utils/useIntObs'
 
 const SlideBioComponent = ({ homeRef, homeInView }) => { // inView is passed from app.jsx it is state variable passed from my useIntObs hook which is an intersection observer template
-    const title_text_1 = `Try my projects`
+    const title_text_1 = `Software Engineer`
     const spaceship_quote1 = `Jacob Thomas`
     const spaceship_quote2 = `Software Engineer`
     const bio1 = `What started off as competitive interest in Math, led to a fire for Math, Physics, and Computers.`;

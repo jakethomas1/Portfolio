@@ -1,7 +1,7 @@
 import React from 'react';
 import IconDisplayComponent from "./IconDisplayComponent";
 // eslint-disable-next-line no-unused-vars
-const ProjectComponent = ({ index, name, script, languages, description, image, video }) => {
+const ProjectComponent = ({ index, name, script, languages, description, image, video, repo_url }) => {
     return (
         <div id="ProjectComponent_root" className="relative flex items-center justify-center flex-col w-[316px] h-[440px] md:h-[480px] md:w-[500px] 
                                                    group cursor-pointer">
@@ -26,7 +26,7 @@ const ProjectComponent = ({ index, name, script, languages, description, image, 
                     className="flex justify-end gap-x-4">
                     <a
                         id="github_button"
-                        
+                        href={repo_url}
                         target="_blank"
                         rel="noopener noreferrer"
                         
@@ -38,26 +38,27 @@ const ProjectComponent = ({ index, name, script, languages, description, image, 
                         </svg>
                         <div className="ml-[7px]">GitHub</div>
                     </a>
-                    <div id="demo_button"
-
-                        target="_blank"
-                        rel="noopener noreferrer"
-
-                        className="inline-flex flex-row py-[1px] content-center px-[12px] bg-[rgba(224,224,234,.9)] text-[14px] text-[white] border-[rgb(32,33,38)] 
-                        cursor-pointer hover:border-[#ff6347] transition-colors ease-in-out duration-300 rounded-[4px] border-[.55px]
-                        font-['Source_Code_Pro'] font-[600] tracking-[1.77px] leading-[32px] select-none items-center">
-                        <svg className="w-[16px] h-[16px]"
-                            viewBox="0 0 330 330" space="preserve">
-                            <path id="XMLID_308_" d="M37.728,328.12c2.266,1.256,4.77,1.88,7.272,1.88c2.763,0,5.522-0.763,7.95-2.28l240-149.999
-	                            c4.386-2.741,7.05-7.548,7.05-12.72c0-5.172-2.664-9.979-7.05-12.72L52.95,2.28c-4.625-2.891-10.453-3.043-15.222-0.4
-	                            C32.959,4.524,30,9.547,30,15v300C30,320.453,32.959,325.476,37.728,328.12z"/>
-                        </svg>
-                        <div className="ml-[7px] text-black">Video Demo</div>
-                    </div>
+                    {video && (
+                        <a id="demo_button"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={`/assets/${video}`}
+                            className="inline-flex flex-row py-[1px] content-center px-[12px] bg-[rgba(224,224,234,.9)] text-[14px] text-[white] border-[rgb(32,33,38)] 
+                            cursor-pointer hover:border-[#ff6347] transition-colors ease-in-out duration-300 rounded-[4px] border-[.55px]
+                            font-['Source_Code_Pro'] font-[600] tracking-[1.77px] leading-[32px] select-none items-center">
+                            <svg className="w-[16px] h-[16px]"
+                                viewBox="0 0 330 330" space="preserve">
+                                <path id="XMLID_308_" d="M37.728,328.12c2.266,1.256,4.77,1.88,7.272,1.88c2.763,0,5.522-0.763,7.95-2.28l240-149.999
+	                                c4.386-2.741,7.05-7.548,7.05-12.72c0-5.172-2.664-9.979-7.05-12.72L52.95,2.28c-4.625-2.891-10.453-3.043-15.222-0.4
+	                                C32.959,4.524,30,9.547,30,15v300C30,320.453,32.959,325.476,37.728,328.12z"/>
+                            </svg>
+                            <div className="ml-[7px] text-black">Video</div>
+                        </a>
+                    )}
                 </div>
             </div>
         </div>
     )
 }//Add media query breakpoints for size, also 
-
+//figure out why display linline fixes play button centering
 export default ProjectComponent;/*nice purple: [rgba(105,85,125,1)] */

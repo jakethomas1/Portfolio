@@ -24,7 +24,7 @@ const FooterComponent = ({ footerRef }: FooterProps ) => {
             <div
                 ref={footerRef}
                 id="footer_container"
-                className="w-full border-t border-gray-700 flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] items-center justify-center
+                className="w-full border-t border-[#222] flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] items-center justify-center
                            px-8 py-auto h-48 relative z-10 shadow-[0em_0em_24px_5px_rgba(0,0,0,0.55)] overflow-visible">
                 <div
                     className="text-left flex flex-row items-center my-[16px]"

@@ -17,6 +17,7 @@ import { interpolate, interpolateColors } from './utils/interpolate'
 import SlideBioComponent from "./Components/SlideBioComponent"
 import useActiveSectionTracker from "./utils/useActiveSectionTracker";
 import FooterComponent from "./Components/FooterComponent";
+import ProgressTrackerComponent from "./Components/ProgressTrackerComponent";
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
             {/* Add renewed landing page component if desired*/ }
             <NavBarComponent activeBtn={activeSection} />
             <SlideBioComponent homeRef={homeRef} homeInView={homeInView} />
+            <ProgressTrackerComponent />
             <ProjectsViewComponent projectsRef={projectsRef} />
             
             <TimelineScroller tlRef={tlRef} aboutRef={aboutRef} />

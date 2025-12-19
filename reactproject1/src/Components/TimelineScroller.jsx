@@ -21,7 +21,7 @@ export default function TimelineScroller({ tlRef, aboutRef }) {
 
         scroll(
             animate("#timelineview_container", {
-                backgroundColor: ["#040203", "#7546bf"],
+                backgroundColor: ["#040203", "#2a1945"],
             }),
             { target: document.querySelector("#timelineview_container_scroller") }
         )
