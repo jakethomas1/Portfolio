@@ -5,10 +5,19 @@ const ProjectComponent = ({ index, name, script, languages, description, image, 
     return (
         <div id="ProjectComponent_root" className="relative flex items-center justify-center flex-col w-[316px] h-[440px] md:h-[480px] md:w-[500px] 
                                                    group cursor-pointer">
-            <div className="relative w-100/100 h-8/12 top-0 border-t-[2px] border-[rgba(150,150,150,1)] rounded-[8px] 
-                            shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px] group-hover:rounded-none 
-                            "
-                    style={{ backgroundImage: `url(/assets/${image})` }}></div>
+
+            {video ? (
+                <a  href={`/assets/${video}`}
+                    className="relative w-100/100 h-8/12 top-0 border-t-[2px] border-[rgba(150,150,150,1)] rounded-[8px] 
+                                shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px] group-hover:rounded-none 
+                                "
+                    style={{ backgroundImage: `url(/assets/${image})` }}></a>
+            ) : (
+                <div href={`/assets/${video}`}
+                        className="relative w-100/100 h-8/12 top-0 border-t-[2px] border-[rgba(150,150,150,1)] rounded-[8px] 
+                                shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px] group-hover:rounded-none cursor-default
+                                "
+                        style={{ backgroundImage: `url(/assets/${image})` }} /> )}
             <div className="flex flex-col relative w-100/100 h-3/12 bottom-0  border-[rgba(90,90,90,1)] text-left">
                 {/* NOTE: THERE SHOULD BE A .MAP HERE IF THE PROJECT WERE TO USE MULTIPLE LANGUAGES (WHICH MOST DO... ALTHOUGH i THINK 3 LANGS MAY BREAK... NEED TO CONCAT LANG NAMES?) */}
                 <div id="programming_icon_container" className="h-full  mt-[8px] ">
