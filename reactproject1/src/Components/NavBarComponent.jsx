@@ -14,7 +14,7 @@ const NavBarComponent = ({ activeBtn }) => {
     const navLinks = [
         { to: "/home", id: "slideBioComp", name: "Home" },
         { to: "/projects", id: "projectsview", name: "Projects" },
-        { to: "/about", id: "timelineview_container_scroller", name: "About" },
+        //{ to: "/about", id: "notable_quote", name: "About" },
         { to: "/contact", id: "footer_container", name: "Contact" },
     ];
 

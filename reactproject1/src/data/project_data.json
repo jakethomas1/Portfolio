@@ -1,6 +1,14 @@
 {
   "projects": [
     {
+      "name": "YTDapper",
+      "languages": [ "Rust" ],
+      "description": "High performance application for downloading video and audio files.",
+      "image": "ytdapper-thumbnail.png",
+      "video": "ytdapper_v1.0.1-demo.mp4",
+      "repo_url": "https://github.com/jakethomas1/ytdapper"
+    },
+    {
       "name": "ACMHackathon2025",
       "languages": [ "Python" ],
       "description": "Achieved 2nd place in ACM at CSUSM's first hackathon as a solo developer.",

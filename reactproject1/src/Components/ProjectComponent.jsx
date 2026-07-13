@@ -9,22 +9,40 @@ const ProjectComponent = ({ index, name, script, languages, description, image, 
             {video ? (
                 <a  href={`/assets/${video}`}
                     className="relative w-100/100 h-[320px] top-0 border-[rgba(150,150,150,1)] rounded-[8px] 
-                                shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px] group-hover:rounded-none 
+                                shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px]
                                 "
-                    style={{ backgroundImage: `url(/assets/${image})` }}></a>
+                    style={{ backgroundImage: `url(/assets/${image})` }}><div className="absolute inset-0 bg-white/0 group-hover:bg-white/20 transition-colors duration-200 rounded-[8px]" />
+
+                    {/* play button, centered, fades in on hover */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <div className="w-[56px] h-[56px] rounded-full bg-black/60 flex items-center justify-center">
+                            <svg
+                                className="w-[24px] h-[24px] fill-white"
+                                viewBox="0 0 330 330"
+                                preserveAspectRatio="xMidYMid meet"
+                            >
+                                <path
+                                    id="XMLID_308_"
+                                    d="M37.728,328.12c2.266,1.256,4.77,1.88,7.272,1.88c2.763,0,5.522-0.763,7.95-2.28l240-149.999
+            c4.386-2.741,7.05-7.548,7.05-12.72c0-5.172-2.664-9.979-7.05-12.72L52.95,2.28c-4.625-2.891-10.453-3.043-15.222-0.4
+            C32.959,4.524,30,9.547,30,15v300C30,320.453,32.959,325.476,37.728,328.12z"
+                                />
+                            </svg>
+                        </div>
+                    </div></a>
             ) : (
                 <div href={`/assets/${video}`}
                         className="relative w-100/100 h-[320px] top-0 border-[rgba(150,150,150,1)] rounded-[8px] 
-                                shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px] group-hover:rounded-none cursor-default
+                                shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px] cursor-default
                                 "
                         style={{ backgroundImage: `url(/assets/${image})` }} /> )}
             <div className="flex flex-col relative w-100/100 h-3/12 bottom-0  border-[rgba(90,90,90,1)] text-left">
                 {/* NOTE: THERE SHOULD BE A .MAP HERE IF THE PROJECT WERE TO USE MULTIPLE LANGUAGES (WHICH MOST DO... ALTHOUGH i THINK 3 LANGS MAY BREAK... NEED TO CONCAT LANG NAMES?) */}
                 <div id="programming_icon_container" className="h-fit  top-[-32px] absolute">
                     <div id="program_lang_item"         
-                        className="flex flex-row items-center border-[1px] border-[#999] w-auto inline-flex rounded-[4px] bg-[rgba(10,9,8,1)]">
+                        className="flex scp-font flex-row items-center border-[1px] border-[#999] w-auto inline-flex rounded-[4px] bg-[rgba(10,9,8,1)]">
                         <div className="ml-[8px] w-[16px]"><IconDisplayComponent key={index} languages={languages} /></div>
-                        <div className="mx-[8px]">{languages}</div>
+                        <div className="mx-[8px] text-[16px]">{languages}</div>
                     </div> 
                 </div>
                 <div className="w-full  h-full flex flex-col">

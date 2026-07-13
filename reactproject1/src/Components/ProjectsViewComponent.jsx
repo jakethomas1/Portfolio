@@ -21,7 +21,7 @@ export default function ProjectsViewComponent({ projectsRef }) {
                         <ProjectComponent key={index} {...project} />
                     ))}
                 </div>
-                <div className="flex w-full relative justify-center text-[#aaa] pb-16">
+                <div id="notable_quote" className="flex w-full relative justify-center text-[#aaa] pb-16">
                     <div className="relative flex flex-col w-[320px] md:w-[440px] text-left">{quote}
                         <div className="text-right">{author}</div>
                     </div>

@@ -1,5 +1,5 @@
 
-const IconDisplayComponent = ({ btn_text, icon_file, dest }) => {
+const IconDisplayComponent = ({ btn_text, icon_file, dest, size=16 }) => {
     return (
         <div
             id="white_button"
@@ -12,7 +12,8 @@ const IconDisplayComponent = ({ btn_text, icon_file, dest }) => {
             <img
                 src={`/assets/icons/${icon_file}`}
                 alt="icon"
-                className="inline flex-none w-[16px] h-[16px] mr-2"
+                className="inline flex-none mr-2"
+                style={{ width: `${size}px`, height: `${size}px` }}
             />
             {btn_text}
         </div>
