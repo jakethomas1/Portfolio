@@ -3,43 +3,61 @@ import IconDisplayComponent from "./IconDisplayComponent";
 // eslint-disable-next-line no-unused-vars
 const ProjectComponent = ({ index, name, script, languages, description, image, video, repo_url }) => {
     return (
-        <div id="ProjectComponent_root" className="relative flex items-center justify-center flex-col w-[316px] h-[440px] md:h-[480px] md:w-[500px] 
-                                                   group cursor-pointer">
+        <div id="ProjectComponent_root" className="relative flex items-center justify-center flex-col w-[316px] h-auto md:w-[500px] 
+                                                   group cursor-pointer border-[1px] border-[rgba(125,80,20,.5)] margin-[2px] p-[22px] rounded-[24px] bg-[#000]">
 
             {video ? (
                 <a  href={`/assets/${video}`}
-                    className="relative w-100/100 h-8/12 top-0 border-t-[2px] border-[rgba(150,150,150,1)] rounded-[8px] 
+                    className="relative w-100/100 h-[320px] top-0 border-[rgba(150,150,150,1)] rounded-[8px] 
                                 shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px] group-hover:rounded-none 
                                 "
                     style={{ backgroundImage: `url(/assets/${image})` }}></a>
             ) : (
                 <div href={`/assets/${video}`}
-                        className="relative w-100/100 h-8/12 top-0 border-t-[2px] border-[rgba(150,150,150,1)] rounded-[8px] 
+                        className="relative w-100/100 h-[320px] top-0 border-[rgba(150,150,150,1)] rounded-[8px] 
                                 shadow-[0_2px_2px_1px_rgba(0,0,0,.8)] bg-initial mb-[6px] group-hover:rounded-none cursor-default
                                 "
                         style={{ backgroundImage: `url(/assets/${image})` }} /> )}
             <div className="flex flex-col relative w-100/100 h-3/12 bottom-0  border-[rgba(90,90,90,1)] text-left">
                 {/* NOTE: THERE SHOULD BE A .MAP HERE IF THE PROJECT WERE TO USE MULTIPLE LANGUAGES (WHICH MOST DO... ALTHOUGH i THINK 3 LANGS MAY BREAK... NEED TO CONCAT LANG NAMES?) */}
-                <div id="programming_icon_container" className="h-full  mt-[8px] ">
+                <div id="programming_icon_container" className="h-fit  top-[-32px] absolute">
                     <div id="program_lang_item"         
-                        className="flex flex-row items-center border-[1px] border-[#aaa] w-auto inline-flex rounded-[4px] bg-[rgba(200,200,200,.08)]">
+                        className="flex flex-row items-center border-[1px] border-[#999] w-auto inline-flex rounded-[4px] bg-[rgba(10,9,8,1)]">
                         <div className="ml-[8px] w-[16px]"><IconDisplayComponent key={index} languages={languages} /></div>
                         <div className="mx-[8px]">{languages}</div>
                     </div> 
                 </div>
                 <div className="w-full  h-full flex flex-col">
-                    <div className="h-1/3 text-[24px] font-['Roboto','Arial',sans-serif]  text-left items-center mb-[6px]">{name}</div>
-                    <div className="h-2/3 pr-[6px] leading-[1.1] mb-[6px]">{description}</div>
+                    <div className="h-1/3 text-[26px] ubuntu-font font-[700]  text-left items-center my-[6px]">{name}</div>
+                    <div className="h-2/3 text-[18px] pr-[6px] leading-[1.1] mb-[6px]">{description}</div>
                 </div>
                 <div id="project_button_container"
-                    className="flex justify-end gap-x-4">
+                    className="flex justify-end gap-x-4 mt-[12px]">
+                    
+                    {video && (
+                        <a id="demo_button"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={`/assets/${video}`}
+                            className="inline-flex flex-row py-[1px] content-center px-[12px] text-[14px] hover:fill-white fill-black hover:text-white text-black border-[rgb(32,33,38)] 
+                            cursor-pointer hover:border-[#ff6347] bg-[#ff6509f1] hover:bg-[#0d0d0e] transition-colors ease-in-out duration-300 rounded-[4px] border-[.55px]
+                            font-['Source_Code_Pro'] font-[600] tracking-[1.77px] leading-[32px] select-none items-center">
+                            <svg className="w-[16px] h-[16px] "
+                                viewBox="0 0 330 330" space="preserve">
+                                <path id="XMLID_308_" d="M37.728,328.12c2.266,1.256,4.77,1.88,7.272,1.88c2.763,0,5.522-0.763,7.95-2.28l240-149.999
+	                                c4.386-2.741,7.05-7.548,7.05-12.72c0-5.172-2.664-9.979-7.05-12.72L52.95,2.28c-4.625-2.891-10.453-3.043-15.222-0.4
+	                                C32.959,4.524,30,9.547,30,15v300C30,320.453,32.959,325.476,37.728,328.12z"/>
+                            </svg>
+                            <div className="ml-[7px] ">Demo</div>
+                        </a>
+                    )}
                     <a
                         id="github_button"
                         href={repo_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        
-                        className="inline-flex flex-row py-[1px] content-center px-[12px] bg-[#0d0d0e] text-[14px] text-[white] border-[rgb(32,33,38)] 
+
+                        className="inline-flex flex-row py-[1px] content-center px-[12px] bg-[#0d0d0e] text-[14px] text-[white] border-[#ff634754] 
                         cursor-pointer hover:border-[#ff6347] transition-colors ease-in-out duration-300 rounded-[4px] border-[.55px]
                         font-['Source_Code_Pro'] font-[600] tracking-[1.77px] leading-[32px] select-none items-center">
                         <svg className="h-[24px] w-[24px]" aria-hidden="true" viewBox="0 0 24 24" version="1.1" data-view-component="true" fill="white">
@@ -47,23 +65,6 @@ const ProjectComponent = ({ index, name, script, languages, description, image, 
                         </svg>
                         <div className="ml-[7px]">GitHub</div>
                     </a>
-                    {video && (
-                        <a id="demo_button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href={`/assets/${video}`}
-                            className="inline-flex flex-row py-[1px] content-center px-[12px] bg-[rgba(224,224,234,.9)] text-[14px] text-[white] border-[rgb(32,33,38)] 
-                            cursor-pointer hover:border-[#ff6347] transition-colors ease-in-out duration-300 rounded-[4px] border-[.55px]
-                            font-['Source_Code_Pro'] font-[600] tracking-[1.77px] leading-[32px] select-none items-center">
-                            <svg className="w-[16px] h-[16px]"
-                                viewBox="0 0 330 330" space="preserve">
-                                <path id="XMLID_308_" d="M37.728,328.12c2.266,1.256,4.77,1.88,7.272,1.88c2.763,0,5.522-0.763,7.95-2.28l240-149.999
-	                                c4.386-2.741,7.05-7.548,7.05-12.72c0-5.172-2.664-9.979-7.05-12.72L52.95,2.28c-4.625-2.891-10.453-3.043-15.222-0.4
-	                                C32.959,4.524,30,9.547,30,15v300C30,320.453,32.959,325.476,37.728,328.12z"/>
-                            </svg>
-                            <div className="ml-[7px] text-black">Video</div>
-                        </a>
-                    )}
                 </div>
             </div>
         </div>

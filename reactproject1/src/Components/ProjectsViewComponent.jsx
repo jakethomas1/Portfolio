@@ -9,11 +9,11 @@ export default function ProjectsViewComponent({ projectsRef }) {
     return (
         <div ref={projectsRef} id="projectsview" className="bg-[#040203] shadow-[0_2px_18px_rgba(0,0,0,.3)] relative z-10">
             <div id="projectsview_container" className="pt-[16px] pb-[18px] bg-[#040203]">
-                <SectionHeaderComponent header_text="Projects" />
+                <SectionHeaderComponent header_text="Completed Works" />
                 <div
                     id="ProjectsComponent_container"
                     className="flex flex-col justify-center items-center md:grid md:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] 
-                                    gap-x-[32px] gap-y-22 pt-32 pb-42 mx-auto w-full md:max-w-[751px]
+                                    gap-x-[32px] gap-y-22 pt-16 pb-32 mx-auto w-full md:max-w-[751px]
                                     [@media(min-width:1049px)]:max-w-[1032px] [@media(min-width:1581px)]:max-w-[1564px]
                                     place-items-center">
                     
@@ -21,7 +21,7 @@ export default function ProjectsViewComponent({ projectsRef }) {
                         <ProjectComponent key={index} {...project} />
                     ))}
                 </div>
-                <div className="flex w-full relative justify-center text-[#aaa]">
+                <div className="flex w-full relative justify-center text-[#aaa] pb-16">
                     <div className="relative flex flex-col w-[320px] md:w-[440px] text-left">{quote}
                         <div className="text-right">{author}</div>
                     </div>

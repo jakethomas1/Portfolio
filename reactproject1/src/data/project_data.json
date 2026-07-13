@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "ACMHackathon2025",
-      "languages": [ "Python3" ],
+      "languages": [ "Python" ],
       "description": "Achieved 2nd place in ACM at CSUSM's first hackathon as a solo developer.",
       "image": "acmhackathon2025_results.png",
       "video": "hackathon-video.mp4",
@@ -11,7 +11,7 @@
     {
       "name": "Transcribo",
       "script": "totext.py",
-      "languages": [ "Python3" ],
+      "languages": [ "Python" ],
       "description": "A Python script using Google Speech Recognition API for transcription.",
       "image": "transcribo-pic.png",
       "video": "",
@@ -29,7 +29,7 @@
     {
       "name": "Autoclicka",
       "script": "autoclicker.py",
-      "languages": [ "Python3" ],
+      "languages": [ "Python" ],
       "description": "A minimalist Python script using tkinter and pynput to create a robust automatic clicking application (i.e. autoclicker).",
       "image": "autoclicker-pic.png",
       "video": "autoclicker-video.mp4",

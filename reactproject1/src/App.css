@@ -4,6 +4,8 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 @import "tailwindcss";
 
 @theme {
@@ -27,6 +29,18 @@ body, html, #root {
 .dot-container {
     @apply border-[0px] z-20 pointer-events-none;
     background-color: transparent;
+}
+
+.fira-code-font {
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+.ubuntu-font {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
 }
 
 @keyframes bgZoom {
@@ -292,10 +306,12 @@ body, html, #root {
 }
 */
 
+#ProjectComponent_root {
+    background-image: radial-gradient( ellipse 200% 100% at 75% 100%, rgba(120, 60, 20, 0.18) 0%, rgba(80, 40, 15, 0.08) 50%, rgba(10, 10, 10, 0) 85% );
+}
 
 .home_links { /* style inspired from button 7 https://getcssscan.com/css-buttons-examples */
     border: 1px solid transparent;
-    
     box-shadow: rgba(190, 190, 190, .7) 0 1px 0 0 inset;
     color: #fff;
     cursor: pointer;

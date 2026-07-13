@@ -52,10 +52,8 @@ function App() {
             {/* Add renewed landing page component if desired*/ }
             <NavBarComponent activeBtn={activeSection} />
             <SlideBioComponent homeRef={homeRef} homeInView={homeInView} />
-            
+            {/* <ProgressTrackerComponent /> */}
             <ProjectsViewComponent projectsRef={projectsRef} />
-            
-            <TimelineScroller tlRef={tlRef} aboutRef={aboutRef} />
             <FooterComponent footerRef={footerRef} />
         </>
     );
