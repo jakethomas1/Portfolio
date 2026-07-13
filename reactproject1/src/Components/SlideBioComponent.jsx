@@ -60,7 +60,8 @@ const SlideBioComponent = ({ homeRef, homeInView }) => { // inView is passed fro
                             <div className="flex flex-col justify-end gap-y-[1em] 
                                             [@media(min-width:442px)]:flex-row [@media(min-width:442px)]:justify-start [@media(min-width:442px)]:gap-y-[0]">
                                 <BtnComponentWhite size="32" btn_text="Security+" icon_file="secp.png" dest="https://www.credly.com/badges/83a31a5d-a94b-410e-a082-25e5eb3f8256" />
-                                <BtnComponentWhite btn_text="Diploma" icon_file="diploma-scroll.svg" dest="https://www.parchment.com/u/award/95d7dc7f49b6813fab2a29af0ad7adc4" />
+                                <BtnComponentWhite btn_text="Diploma" icon_file="diploma-scroll.svg" dest="https://www.parchment.com/u/award/95d7dc7f49b6813fab2a29af0ad7adc4"
+                                    className="w-fit ml-auto"/>
                             </div>
                             <div className="flex justify-end mt-[1em] sm:mt-0 sm:block sm:justify-normal">
                                 <BtnComponentColor btn_text="Projects" icon_file="projects-icon.svg" dest="projectsview" />
