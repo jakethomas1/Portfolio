@@ -32,7 +32,7 @@ const SlideBioComponent = ({ homeRef, homeInView }) => { // inView is passed fro
                 ref={homeRef}
                 id="slideBioComp"
                 className={`
-                    relative top-0 left-0 min-h-[100vh] h-auto overflow-hidden
+                    relative top-0 left-0 min-h-[87vh] h-auto overflow-hidden
                     flex 
                     flex-col mt-[max(70px,10%)] gap-12 lg:gap-0 lg:mt-0 lg:flex-row 
                     items-center justify-center z-10
