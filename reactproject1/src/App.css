@@ -17,9 +17,55 @@
 /*also separate tile caption from image, image gets round border, text gets no background no border*/
 
 body, html, #root {
-    overflow: visible;
     background-color: #040203;
     color: #fff;
+}
+
+html {
+    color-scheme: dark;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100dvh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.scroll-area {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    scrollbar-color: rgba(225, 224, 217, 0.35) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+}
+
+#page-margins {
+    max-width: 1280px;
+    padding-inline: clamp(16px, 4vw, 40px);
+    margin-inline: auto;
+}
+
+.foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgb(211, 203, 200);
+    font-size: .9rem;
+}
+
+.foot-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
 #timelineview {
@@ -46,10 +92,6 @@ body, html, #root {
 .scp-font {
     font-family: "Source Code Pro", sans-serif;
     font-style: normal;
-}
-
-#projectsview {
-    scroll-margin-top: 68px;
 }
 
 @keyframes bgZoom {
@@ -363,7 +405,11 @@ body, html, #root {
 
 #root {
     width: 100%;
-    height: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     text-align: center;
 }
 

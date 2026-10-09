@@ -16,7 +16,7 @@ import { TextScrambleComponent } from './Components/TextScrambleComponent';
 import { interpolate, interpolateColors } from './utils/interpolate'
 import SlideBioComponent from "./Components/SlideBioComponent"
 import useActiveSectionTracker from "./utils/useActiveSectionTracker";
-import FooterComponent from "./Components/FooterComponent";
+import FootComponent from "./Components/FootComponent";
 import ProgressTrackerComponent from "./Components/ProgressTrackerComponent";
 
 
@@ -27,9 +27,10 @@ function App() {
     //  e.g. (.5) / (300vh / 100) = .1667 ... only applicable in sections larger than 100vh
     // note: projectsview has dynamic height, must get clever using absolute ele with height:calc(100%-100vh) basically the middlepoint marker
     const [homeRef, homeInView] = useIntObs(0.4, false); 
-    const [projectsRef, projectsInView] = useIntObs(.1, false);
+    const [projectsRef, projectsInView] = useIntObs(.4, false);
     const [aboutRef, aboutInView] = useIntObs(.4 , false); 
-    const [footerRef, contactInView] = useIntObs(.4, false);
+    const [footRef, contactInView] = useIntObs(.4, false);
+    const [navSentinelRef, endVis] = useIntObs(1, false);
     const [activeSection, setActiveSection] = useState('home');
     //^ too many state variables
     useActiveSectionTracker({
@@ -42,7 +43,6 @@ function App() {
     
     
     /*const [tlRef, tlProgress] = useSectionInView();*/
-    const [tlRef, tlInView] = useIntObs(.4, false);
     /*const translateX = useTransform(tlProgress, [0, 1], [650, -2200]);*/
     
 
@@ -50,11 +50,16 @@ function App() {
         <>
             <TitleComponent />
             {/* Add renewed landing page component if desired*/ }
-            <NavBarComponent activeBtn={activeSection} />
-            <SlideBioComponent homeRef={homeRef} homeInView={homeInView} />
-            {/* <ProgressTrackerComponent /> */}
-            <ProjectsViewComponent projectsRef={projectsRef} />
-            <FooterComponent footerRef={footerRef} />
+            <NavBarComponent activeBtn={activeSection} endVis={endVis} />
+            <div id="scroll-area" className="scroll-area">
+                <div id="page-margins">
+                    <div ref={navSentinelRef} id="scroll-position-sent" className="absolute top-[250px]"></div>
+                    <SlideBioComponent homeRef={homeRef} homeInView={homeInView} />
+                    {/* <ProgressTrackerComponent /> */}
+                    <ProjectsViewComponent projectsRef={projectsRef} />
+                </div>
+                <FootComponent footerRef={footRef} />
+            </div>
         </>
     );
 }

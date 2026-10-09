@@ -34,13 +34,13 @@ const FooterComponent = ({ footerRef }: FooterProps ) => {
                             className="w-[48px] h-[48px] cursor-pointer"
                             src="/assets/icons/jt-icon-512x512.png" alt="JT Icon"
                             onClick={() => {
-                                document.getElementById("base_html")?.scrollIntoView({ behavior: 'auto', block: 'start' });
+                                document.getElementById("scroll-area")?.scrollTo({ top: 0, behavior: 'smooth' });
                             }} />
                     </div>
                     <div
                         className="segoe font-[600] px-2 cursor-pointer"
                         onClick={() => {
-                            document.getElementById("base_html")?.scrollIntoView({ behavior: 'auto', block: 'start' });
+                            document.getElementById("scroll-area")?.scrollTo({ top: 0, behavior: 'smooth' });
                         }}>Jacob Thomas</div>
                 </div>
 
@@ -63,7 +63,7 @@ const FooterComponent = ({ footerRef }: FooterProps ) => {
                         const isInternal = href && href.startsWith("/");
                         return isInternal ? (       //This conditional to use Link when appropriate, <a> tag when not
                             <Link key={src} to={href} className="min-w-[32px] min-h-[32px] mx-[6px] nav-icon-animation">
-                                <img src={src} alt={alt} className="max-w-[32px] max-h-[32px] object-contain text-transparent" />
+                                <img src={src} alt={alt} className="block max-w-[32px] max-h-[32px] object-contain text-transparent" />
                             </Link>
                         ) : (
                             <a

@@ -9,19 +9,18 @@ export default function ProjectsViewComponent({ projectsRef }) {
     return (
         <div ref={projectsRef} id="projectsview" className="bg-[#040203] shadow-[0_2px_18px_rgba(0,0,0,.3)] relative z-10">
             <div id="projectsview_container" className="pt-[16px] pb-[18px] bg-[#040203]">
-                <SectionHeaderComponent header_text="Completed Works" />
+                <SectionHeaderComponent header_text="Completed Projects" />
                 <div
                     id="ProjectsComponent_container"
-                    className="flex flex-col justify-center items-center md:grid md:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] 
-                                    gap-x-[32px] gap-y-22 pt-16 pb-32 mx-auto w-full md:max-w-[751px]
-                                    [@media(min-width:1049px)]:max-w-[1032px] [@media(min-width:1581px)]:max-w-[1564px]
+                    className="flex flex-col justify-center items-center md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+                                    gap-x-[32px] gap-y-22 pt-16 pb-32 w-full items-stretch
                                     place-items-center">
                     
                     {ProjectData.projects.map((project, index) => (
                         <ProjectComponent key={index} {...project} />
                     ))}
                 </div>
-                <div id="notable_quote" className="flex w-full relative justify-center text-[#aaa] pb-16">
+                <div id="notable_quote" className="flex w-full relative justify-center text-[#aaa] pt-10 pb-1">
                     <div className="relative flex flex-col w-[320px] md:w-[440px] text-left">{quote}
                         <div className="text-right">{author}</div>
                     </div>
