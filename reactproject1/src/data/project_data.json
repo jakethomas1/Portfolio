@@ -1,6 +1,14 @@
 {
   "projects": [
     {
+      "name": "SVGFiddle",
+      "languages": [ "React" ],
+      "description": "Edit SVGs, generate clip paths, and preview the result live in your browser.",
+      "image": "svgfiddle-thumbnail.png",
+      "video": "",
+      "repo_url": "https://svgfiddle.jakethomas1.com"
+    },
+    {
       "name": "YTDapper",
       "languages": [ "Rust" ],
       "description": "High performance application for downloading video and audio files.",
